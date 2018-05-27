@@ -1,0 +1,18 @@
+_ignore
+__pycache__
+.idea
+.DS_Store
+venv/
+
+\.eggs/
+
+\.pytest_cache/
+
+pygame_engine\.egg-info/
+
+dist/
+
+# WEBAPP
+db.sqlite3
+static/
+node_modules/
