@@ -3,5 +3,5 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', views.SimpleModelListCreator.as_view()),
+    path('', views.index),
 ]

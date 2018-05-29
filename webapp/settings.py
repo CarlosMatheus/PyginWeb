@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'frontend',
     'home',
-    'editor',
+    'editor'
 ]
+
+CSRF_COOKIE_NAME = "csrftoken"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
