@@ -16,3 +16,5 @@ dist/
 db.sqlite3
 static/
 node_modules/
+
+PyginWeb/
