@@ -18,3 +18,5 @@ static/
 node_modules/
 
 PyginWeb/
+
+webpack-stats\.dev\.json
