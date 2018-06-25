@@ -33,7 +33,7 @@ function render() {
                                             </div>
                                             <div className="pythoneng-0-0-0-0-0-0-0-1-0-1">
                                                 <div className="pythoneng-0-0-0-0-0-0-0-1-0-1-0">
-                                                    <a href="/home" className="pythoneng-0-0-0-0-0-0-0-1-0-1-0-0">
+                                                    <a href="/home/" className="pythoneng-0-0-0-0-0-0-0-1-0-1-0-0">
                                                         <div className="pythoneng-home_1">Start Exploring</div>
                                                     </a>
                                                 </div>
@@ -62,7 +62,7 @@ function render() {
                                             </div>
                                         </div>
                                         <div className="pythoneng-0-0-0-0-0-0-0-1-4">
-                                            <a href="/home" className="pythoneng-0-0-0-0-0-0-0-1-4-0">
+                                            <a href="/home/" className="pythoneng-0-0-0-0-0-0-0-1-4-0">
                                                 <div onClick={this.props.handleClick} className="pythoneng-start_exploring-1">
                                                     START EXPLORING
                                                 </div>
