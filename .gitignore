@@ -20,5 +20,3 @@ node_modules/
 PyginWeb/
 
 webpack-stats\.dev\.json
-
-./frontend/package-lock.json
