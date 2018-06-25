@@ -6,32 +6,31 @@ import Scene from './scene';
 import Inspector from './inspector';
 import './interface.css';
 
-
-function render() {
-    return <div className="interface-interface-5">
+const Editor = () => {
+  return (
+    <div className="interface-interface-5">
         <div className="interface-0">
             <div className="interface-0-0">
                 <div className="interface-0-0-0">
                     <div className="interface-gameobjectlist_instance-5">
-                        <Gameobjectlist /> 
+                        <Gameobjectlist />
                     </div>
                 </div>
                 <div className="interface-0-0-1">
                     <div className="interface-fileexplorer_instance-3">
-                        <Fileexplorer /> 
+                        <Fileexplorer />
                     </div>
                 </div>
             </div>
             <div className="interface-scene_instance-7">
-                <Scene /> 
+                <Scene />
             </div>
             <div className="interface-inspector_instance-0">
-                <Inspector /> 
+                <Inspector />
             </div>
         </div>
-    </div>;
-};
-
-export default function(props) {
-    return render.apply({props: props});
+    </div>
+  )
 }
+
+export default Editor
