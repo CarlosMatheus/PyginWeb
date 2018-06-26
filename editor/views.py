@@ -10,12 +10,26 @@ class ListProjects(generics.ListCreateAPIView):
     serializer_class = ProjectSerializer
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user, creation_date=datetime.datetime.now())
+        toAdd = ""
+        if len(Scene.objects.filter(name=self.request.data['name'])) > 0:
+            toAdd="*"
+        serializer.save(user=self.request.user, creation_date=datetime.datetime.now()
+                        , name=self.request.data['name']+toAdd)
 
 
 class DetailProjects(generics.ListAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return Scene.objects.filter(user=user)
+
+
+class DestroyProjects(generics.DestroyAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    lookup_field = "name"
 
     def get_queryset(self):
         user = self.request.user

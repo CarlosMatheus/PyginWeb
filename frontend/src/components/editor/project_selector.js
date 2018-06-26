@@ -3,19 +3,19 @@ import Popup from 'reactjs-popup'
 import axios from 'axios'
 import './project_selector.css';
 
+//Project item
 function Project(props) {
     return (
         <div>{props.name}
-            <button onClick={() => {
-                props.onClickSelect();
-                window.alert('click')
-            }}>ola
+            <button onClick={() => props.onClickSelect().then(props.onClickSelect())}>
+                Delete
             </button>
 
         </div>
     )
 }
 
+//Create project
 class CreateProject extends React.Component {
     constructor(props) {
         super(props)
@@ -54,6 +54,7 @@ class CreateProject extends React.Component {
     }
 }
 
+//Create popup
 class ProjectSelector extends React.Component {
     constructor(props) {
         super(props);
@@ -63,13 +64,17 @@ class ProjectSelector extends React.Component {
         };
     }
 
-    componentDidMount() {
+    getList(){
         axios.get('http://127.0.0.1:8000/api/projects/')
             .then(response => this.setState({
                     open: true,
                     items: response.data.map((proj) => proj.name)
                 })
             )
+    }
+
+    componentDidMount() {
+        this.getList();
     }
 
     openModal = () => {
@@ -79,6 +84,13 @@ class ProjectSelector extends React.Component {
         this.setState({open: false});
     };
 
+    deleteProject(name) {
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.delete('http://127.0.0.1:8000/api/projects/destroy/' + name + '/');
+        this.getList();
+    }
+
     render() {
         if (this.state.open) {
             return (
@@ -87,15 +99,12 @@ class ProjectSelector extends React.Component {
                         {
                             this.state.items.map((item) => {
                                 return (
-                                    <Project name={item} onClickSelect={() => this.closeModal()}/>
+                                    <Project name={item}
+                                             onClickSelect={() =>
+                                                 this.deleteProject(item)}/>
                                 )
                             })
                         }
-                        <button onClick={() => {
-                            this.closeModal();
-                            window.alert(this.state.open)
-                        }}> fecha
-                        </button>
                         <CreateProject onClick={() => {
                             this.closeModal()
                         }}/>
