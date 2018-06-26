@@ -18,37 +18,73 @@ function render() {
                     </div>
                 </div>
             </div>
-            <div className="gameobjectlist-rectangle_3" /> 
+            <div className="gameobjectlist-rectangle_3"/>
         </div>
         <div className="gameobjectlist-1">
             <div className="gameobjectlist-rectangle-5">
                 <div className="gameobjectlist-1-0-0">
                     {/*TODO:o botao está aqui*/}
-                    <div className="gameobjectlist-rectangle_2" onClick={()=>{
-                          axios.get('http://127.0.0.1:8000/api/projects/')
-                              .then(response => window.alert(
-                                  response.data.map((proj)=>proj.name)
-                              ))
+                    <div className="gameobjectlist-rectangle_2" onClick={() => {
+                        axios.get('http://127.0.0.1:8000/api/projects/')
+                            .then(response => window.alert(
+                                response.data.map((proj) => proj.name)
+                            ))
 
-                        }}>
+                    }}>
                         <div className="gameobjectlist-1-0-0-0-0">
                             <div className="gameobjectlist-1-0-0-0-0-0">
                                 <div className="gameobjectlist-1-0-0-0-0-0-0">
-                                    <div className="gameobjectlist-line_3" /> 
+                                    <div className="gameobjectlist-line_3"/>
                                 </div>
                             </div>
-                            <div className="gameobjectlist-line_2" /> 
+                            <div className="gameobjectlist-line_2"/>
                             <div className="gameobjectlist-1-0-0-0-0-2">
                                 <div className="gameobjectlist-1-0-0-0-0-2-0">
-                                    <div className="gameobjectlist-line_3-8" /> 
+                                    <div className="gameobjectlist-line_3-8"/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="gameobjectlist-rectangle_2-4">
+                    <div className="gameobjectlist-rectangle_2-4" onClick={
+                        () => {
+                            window.alert('teste de envio');
+                            const data = {
+                                name: "testedonegocio",
+                                creation_date: "2018-06-15T01:01:00Z",
+                                user: 1,
+                            };
+                            // fetch("http://127.0.0.1:8000/api/", {
+                            //     method: "post",
+                            //     headers: {
+                            //         "Authorization": 0x7f4a9684a128,
+                            //         "Content-Type": "application/json",
+                            //     },
+                            //     body: JSON.stringify(data),
+                            // }).then(function (response) {
+                            //     return response.json();
+                            // }).then(function (data) {
+                            //     console.log("Data is ok", data);
+                            // }).catch(function (ex) {
+                            //     console.log("parsing failed", ex);
+                            // });
+                            axios.defaults.xsrfCookieName = 'csrftoken';
+                            axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+                            axios.post(
+                                "http://127.0.0.1:8000/api/", {
+                                    headers: {
+                                        contentType: 'application/json',
+                                    },
+                                    body: {
+                                        name: "testedonegocio2",
+                                        creation_date: "2018-06-15T01:01:00Z",
+                                        user: 1,
+                                    }
+                                })
+                        }
+                    }>
                         <div className="gameobjectlist-1-0-0-1-0">
-                            <div className="gameobjectlist-line_3-9" /> 
-                            <div className="gameobjectlist-line_3-6" /> 
+                            <div className="gameobjectlist-line_3-9"/>
+                            <div className="gameobjectlist-line_3-6"/>
                         </div>
                     </div>
                     <div className="gameobjectlist-rectangle_2-3">
@@ -62,6 +98,6 @@ function render() {
     </div>;
 };
 
-export default function(props) {
+export default function (props) {
     return render.apply({props: props});
 }

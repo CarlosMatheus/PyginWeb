@@ -8,7 +8,6 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 
 class Editor extends React.Component {
-
     render() {
         return (
             <div className="interface-interface-5">
