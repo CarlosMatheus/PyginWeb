@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding-bottom: 32px;
     background: rgb(228, 228, 228);
 }
 
@@ -61,14 +62,15 @@
 
 .scene-1 {
     display: flex;
-    margin-top: 552px;
+    margin-top: 78px;
+    padding-left: 131px;
+    padding-right: 35px;
 }
 
-.scene-rectangle_4-9 {
-    height: 7px;
-    flex-grow: 1;
-    flex-basis: 0px;
-    background: #D8D8D8;
+.scene-screen_size_group-9 {
+    width: 445px;
+    height: 449px;
+    flex-shrink: 0;
 }
 
 * {

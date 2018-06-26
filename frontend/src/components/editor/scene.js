@@ -18,7 +18,7 @@ function render() {
             </div>
         </div>
         <div className="scene-1">
-            <div className="scene-rectangle_4-9" /> 
+            <div className="scene-screen_size_group-9" /> 
         </div>
     </div>;
 };
