@@ -3,35 +3,74 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 170px;
-    background: rgb(228, 228, 228);
+    padding-bottom: 166px;
+    background: rgb(56, 56, 56);
 }
 
 .scene-0 {
     display: flex;
 }
 
-.scene-rectangle_4 {
+.scene-rectangle_3 {
     display: flex;
     flex-direction: column;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    background: #D8D8D8;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
+    background: rgb(30, 30, 30);
 }
 
 .scene-0-0-0 {
     display: flex;
-    padding-left: 10px;
-    padding-right: 12px;
+    padding-right: 80px;
 }
 
-.scene-gameobjectlist-5 {
-    width: 118px;
+.scene-rectangle_4-9 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2px;
+    border-radius: 5px;
+    background: rgb(51, 51, 51);
+}
+
+.scene-0-0-0-0-0 {
+    display: flex;
+}
+
+.scene-0-0-0-0-0-0 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+}
+
+.scene-0-0-0-0-0-0-0 {
+    display: flex;
+}
+
+.scene-rectangle_4 {
+    width: 5px;
+    height: 9px;
+    flex-shrink: 0;
+    background: rgb(51, 51, 51);
+}
+
+.scene-0-0-0-0-0-1 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3px;
+}
+
+.scene-0-0-0-0-0-1-0 {
+    display: flex;
+}
+
+.scene-gameobjectlist-4 {
+    width: 130px;
     flex-shrink: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: rgb(162, 160, 160);
-    font-size: 14px;
-    line-height: 16px;
+    color: rgb(136, 136, 136);
+    font-size: 11px;
+    line-height: 13px;
     letter-spacing: 0px;
     font-weight: normal;
     font-style: normal;
@@ -40,11 +79,60 @@
     word-wrap: break-word;
 }
 
-.scene-rectangle_3 {
-    height: 30px;
+.scene-0-0-0-0-0-2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.scene-0-0-0-0-0-2-0 {
+    display: flex;
+}
+
+.scene-rectangle_4-8 {
+    width: 5px;
+    height: 6px;
+    flex-shrink: 0;
+    background: rgb(51, 51, 51);
+}
+
+.scene-1 {
+    display: flex;
+}
+
+.scene-rectangle-3 {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     flex-basis: 0px;
-    background: rgb(162, 160, 160);
+    min-height: fit-content;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: linear-gradient(180deg, rgb(51, 51, 51), rgb(29, 29, 29));
+}
+
+.scene-1-0-0 {
+    display: flex;
+    padding-left: 5px;
+    padding-right: 172px;
+}
+
+.scene-rectangle_2 {
+    width: 43px;
+    height: 13px;
+    flex-shrink: 0;
+    background: rgba(47, 47, 47, 0);
+}
+
+.scene-2 {
+    display: flex;
+}
+
+.scene-rectangle-6 {
+    height: 1px;
+    flex-grow: 1;
+    flex-basis: 0px;
+    background: rgb(31, 31, 31);
 }
 
 * {

@@ -6,50 +6,65 @@ import './gameobjectlist.css';
 function render() {
     return <div className="gameobjectlist-gameobjectlist-6">
         <div className="gameobjectlist-0">
-            <div className="gameobjectlist-rectangle_4-6">
+            <div className="gameobjectlist-rectangle_3">
                 <div className="gameobjectlist-0-0-0">
-                    <div className="gameobjectlist-rectangle_4">
+                    <div className="gameobjectlist-rectangle_4-0">
                         <div className="gameobjectlist-0-0-0-0-0">
-                            <div className="gameobjectlist-gameobjectlist-2">
-                                Game Object List
+                            <div className="gameobjectlist-0-0-0-0-0-0">
+                                <div className="gameobjectlist-0-0-0-0-0-0-0">
+                                    <div className="gameobjectlist-rectangle_4" /> 
+                                </div>
+                            </div>
+                            <div className="gameobjectlist-0-0-0-0-0-1">
+                                <div className="gameobjectlist-0-0-0-0-0-1-0">
+                                    <div className="gameobjectlist-gameobjectlist-2">
+                                        Game Object List
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="gameobjectlist-0-0-0-0-0-2">
+                                <div className="gameobjectlist-0-0-0-0-0-2-0">
+                                    <div className="gameobjectlist-rectangle_4-1" /> 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="gameobjectlist-rectangle_3" /> 
         </div>
         <div className="gameobjectlist-1">
-            <div className="gameobjectlist-rectangle-5">
+            <div className="gameobjectlist-rectangle-8">
                 <div className="gameobjectlist-1-0-0">
-                    <div onClick={this.props.handleClick} className="gameobjectlist-rectangle_2">
+                    <div className="gameobjectlist-rectangle_2">
                         <div className="gameobjectlist-1-0-0-0-0">
-                            <div className="gameobjectlist-1-0-0-0-0-0">
-                                <div className="gameobjectlist-1-0-0-0-0-0-0">
-                                    <div className="gameobjectlist-line_3" /> 
+                            <div className="gameobjectlist-rectangle_1" /> 
+                            <div className="gameobjectlist-1-0-0-0-0-1">
+                                <div className="gameobjectlist-1-0-0-0-0-1-0">
+                                    <div className="gameobjectlist-text-6">Create</div>
                                 </div>
                             </div>
-                            <div className="gameobjectlist-line_2" /> 
                             <div className="gameobjectlist-1-0-0-0-0-2">
                                 <div className="gameobjectlist-1-0-0-0-0-2-0">
-                                    <div className="gameobjectlist-line_3-8" /> 
+                                    <div className="gameobjectlist-triangle-9">
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="gameobjectlist-1-0-0-0-0-2-0-0-0">
+                                            <polygon points="0 4 4 0 4 4" className="gameobjectlist-1-0-0-0-0-2-0-0-0-0" /> 
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="gameobjectlist-rectangle_2-4">
-                        <div className="gameobjectlist-1-0-0-1-0">
-                            <div className="gameobjectlist-line_3-9" /> 
-                            <div className="gameobjectlist-line_3-6" /> 
+                            <div className="gameobjectlist-rectangle_12" /> 
                         </div>
                     </div>
                     <div className="gameobjectlist-rectangle_2-3">
-                        <div className="gameobjectlist-1-0-0-2-0">
-                            <div className="gameobjectlist-text-6">Search...</div>
+                        <div className="gameobjectlist-1-0-0-1-0">
+                            <div className="gameobjectlist-text-65">Search...</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div className="gameobjectlist-2">
+            <div className="gameobjectlist-rectangle-5" /> 
         </div>
     </div>;
 };

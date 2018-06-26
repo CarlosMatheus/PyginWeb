@@ -5,38 +5,64 @@ import Fileexplorer from './fileexplorer';
 import Scene from './scene';
 import Inspector from './inspector';
 import './interface.css';
+import Popup from 'reactjs-popup'
 
-const Editor = () => {
-  return (
-      <div className="main-body">
-          <div className="container-fluid">
-              <div className="row">
-                <div className="interface-interface-5">
-                    <div className="interface-0">
-                        <div className="col">
-                            <div className="main-component-half-1">
-                                <Gameobjectlist />
-                            </div>
-                            <div className="main-component-half-2">
-                                <Fileexplorer />
-                            </div>
-                        </div>
-                        <div className="col-6">
-                            <div className="main-component">
-                                <Scene />
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="main-component">
-                                <Inspector />
+class Editor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {open: false};
+    }
+    openModal = () => {
+        this.setState({open: true});
+    };
+    closeModal = () => {
+        this.setState({open: false});
+    };
+
+    render() {
+        return (
+            <div className="main-body">
+                <div className="container-fluid">
+                    <Popup
+                    open={this.openModal}
+                    closeOnDocumentClick
+                    onClose={this.closeModal}
+                    >
+                    <div className="modal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+                        omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+                        ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+                        doloribus. Odit, aut.
+                    </div>
+                </Popup>
+                    <div className="row">
+                        <div className="interface-interface-5">
+                            <div className="interface-0">
+                                <div className="col">
+                                    <div className="main-component-half-1">
+                                        <Gameobjectlist />
+                                    </div>
+                                    <div className="main-component-half-2">
+                                        <Fileexplorer />
+                                    </div>
+                                </div>
+                                <div className="col-6">
+                                    <div className="main-component">
+                                        <Scene/>
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="main-component">
+                                        <Inspector/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
-          </div>
-      </div>
-  )
+            </div>
+        )
+    }
 }
 
 export default Editor
