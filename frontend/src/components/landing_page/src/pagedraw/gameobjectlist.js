@@ -21,7 +21,7 @@ function render() {
         <div className="gameobjectlist-1">
             <div className="gameobjectlist-rectangle-5">
                 <div className="gameobjectlist-1-0-0">
-                    <div className="gameobjectlist-rectangle_2">
+                    <button className="gameobjectlist-rectangle_2" onClick={()=>{window.alert('hello');}}>
                         <div className="gameobjectlist-1-0-0-0-0">
                             <div className="gameobjectlist-1-0-0-0-0-0">
                                 <div className="gameobjectlist-1-0-0-0-0-0-0">
@@ -35,7 +35,7 @@ function render() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </button>
                     <div className="gameobjectlist-rectangle_2-4">
                         <div className="gameobjectlist-1-0-0-1-0">
                             <div className="gameobjectlist-line_3-9" /> 

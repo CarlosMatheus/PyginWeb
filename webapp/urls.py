@@ -27,5 +27,6 @@ urlpatterns = [
     path('register/', RegisterView.as_view()),
     path('login/', login, {'template_name': 'login.html'}),
     path('logout/', logout, {'next_page': '/'}),
+    path('api/', include('editor.urls')),
     url(r'^', TemplateView.as_view(template_name="index.html")),
 ]
