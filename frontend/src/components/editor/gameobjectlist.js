@@ -35,7 +35,14 @@ function render() {
         <div className="gameobjectlist-1">
             <div className="gameobjectlist-rectangle-8">
                 <div className="gameobjectlist-1-0-0">
-                    <div className="gameobjectlist-rectangle_2">
+                    {/*TODO:o botao está aqui*/}
+                    <div className="gameobjectlist-rectangle_2" onClick={()=>{
+                          axios.get('http://127.0.0.1:8000/api/projects/')
+                              .then(response => window.alert(
+                                  response.data.map((proj)=>proj.name)
+                              ))
+
+                        }}>
                         <div className="gameobjectlist-1-0-0-0-0">
                             <div className="gameobjectlist-rectangle_1" /> 
                             <div className="gameobjectlist-1-0-0-0-0-1">
