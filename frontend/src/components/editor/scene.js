@@ -11,14 +11,7 @@ function render() {
                     <div className="scene-gameobjectlist-5">Scene</div>
                 </div>
             </div>
-            <div className="scene-rectangle_3-9">
-                <div className="scene-0-1-0">
-                    <div className="scene-rectangle_3" /> 
-                </div>
-            </div>
-        </div>
-        <div className="scene-1">
-            <div className="scene-screen_size_group-9" /> 
+            <div className="scene-rectangle_3" /> 
         </div>
     </div>;
 };

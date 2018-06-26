@@ -14,6 +14,7 @@
 .zinterface-0-0 {
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px;
 }
 
 .zinterface-0-0-0 {
@@ -21,18 +22,6 @@
 }
 
 .zinterface-gameobjectlist_instance-5 {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-}
-
-.zinterface-0-0-1 {
-    display: flex;
-    margin-top: 15px;
-}
-
-.zinterface-fileexplorer_instance-3 {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -56,6 +45,19 @@
 }
 
 .zinterface-1 {
+    display: flex;
+    margin-top: 94px;
+    padding-right: 980px;
+}
+
+.zinterface-fileexplorer_instance-3 {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.zinterface-2 {
     width: 0px;
     flex-grow: 1;
     flex-basis: 0px;

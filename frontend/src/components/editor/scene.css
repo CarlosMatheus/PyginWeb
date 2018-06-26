@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 32px;
+    padding-bottom: 170px;
     background: rgb(228, 228, 228);
 }
 
@@ -40,37 +40,11 @@
     word-wrap: break-word;
 }
 
-.scene-rectangle_3-9 {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 0px;
-    min-height: fit-content;
-    background: rgb(162, 160, 160);
-}
-
-.scene-0-1-0 {
-    display: flex;
-}
-
 .scene-rectangle_3 {
     height: 30px;
     flex-grow: 1;
     flex-basis: 0px;
     background: rgb(162, 160, 160);
-}
-
-.scene-1 {
-    display: flex;
-    margin-top: 78px;
-    padding-left: 131px;
-    padding-right: 35px;
-}
-
-.scene-screen_size_group-9 {
-    width: 445px;
-    height: 449px;
-    flex-shrink: 0;
 }
 
 * {

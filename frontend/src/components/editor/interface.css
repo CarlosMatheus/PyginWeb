@@ -47,9 +47,15 @@
     height: 100%;
 }
 
-.main-component-half{
+.main-component-half-1{
     text-align: center;
     height: 50%;
+    margin-bottom: 5%;
+}
+
+.main-component-half-2{
+    text-align: center;
+    height: 47.7%;
 }
 
 .main-body{

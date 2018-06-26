@@ -14,10 +14,10 @@ const Editor = () => {
                 <div className="interface-interface-5">
                     <div className="interface-0">
                         <div className="col">
-                            <div className="main-component-half">
+                            <div className="main-component-half-1">
                                 <Gameobjectlist />
                             </div>
-                            <div className="main-component-half">
+                            <div className="main-component-half-2">
                                 <Fileexplorer />
                             </div>
                         </div>

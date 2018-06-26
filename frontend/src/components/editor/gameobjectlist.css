@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 209px;
+    padding-bottom: 80px;
     background: rgb(228, 228, 228);
 }
 
@@ -181,6 +181,7 @@
 .gameobjectlist-1-0-0-2-0 {
     display: flex;
     padding-left: 9px;
+    padding-right: 15px;
 }
 
 .gameobjectlist-text-6 {
