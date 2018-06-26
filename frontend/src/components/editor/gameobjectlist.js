@@ -37,13 +37,13 @@ function render() {
             <div className="gameobjectlist-rectangle-8">
                 <div className="gameobjectlist-1-0-0">
                     {/*TODO:o botao está aqui*/}
-                    <div className="gameobjectlist-rectangle_2" onClick={()=>{
-                          axios.get('http://127.0.0.1:8000/api/projects/')
-                              .then(response => window.alert(
-                                  response.data.map((proj)=>proj.name)
-                              ))
+                    <div className="gameobjectlist-rectangle_2" onClick={() => {
+                        axios.get('http://127.0.0.1:8000/api/projects/')
+                            .then(response => window.alert(
+                                response.data.map((proj) => proj.name)
+                            ))
 
-                        }}>
+                    }}>
                         <div className="gameobjectlist-1-0-0-0-0">
                             <div className="gameobjectlist-rectangle_1" /> 
                             <div className="gameobjectlist-1-0-0-0-0-1">
@@ -77,6 +77,6 @@ function render() {
     </div>;
 };
 
-export default function(props) {
+export default function (props) {
     return render.apply({props: props});
 }

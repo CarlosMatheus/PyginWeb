@@ -3,7 +3,6 @@ from rest_framework import generics
 from .models import Scene
 from .serializers import SceneSerializer
 import datetime
-from django.http import HttpResponse
 
 
 class ListScenes(generics.ListCreateAPIView):
@@ -12,6 +11,7 @@ class ListScenes(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user, creation_date=datetime.datetime.now())
+        print(str(self.request))
 
 
 class DetailScene(generics.ListAPIView):

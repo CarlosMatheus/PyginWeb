@@ -8,16 +8,6 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 
 class Editor extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {open: false};
-    }
-    openModal = () => {
-        this.setState({open: true});
-    };
-    closeModal = () => {
-        this.setState({open: false});
-    };
     render() {
         return (
             <div className="main-body">
