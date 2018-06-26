@@ -21,7 +21,7 @@ const Editor = () => {
                                 <Fileexplorer />
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col-6">
                             <div className="main-component">
                                 <Scene />
                             </div>
