@@ -1,6 +1,7 @@
 import React from 'react';
 import Popup from 'reactjs-popup'
 import axios from 'axios'
+import './project_selector.css';
 
 function Project(props) {
     return (
