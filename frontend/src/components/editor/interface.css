@@ -3,98 +3,53 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-top: 12px;
-    padding-bottom: 119px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
     background: rgb(162, 160, 160);
+    height: 100%;
 }
 
 .interface-0 {
     display: flex;
     padding-left: 11px;
     padding-right: 14px;
+    height: 100%;
 }
 
-.interface-0-0 {
-    display: flex;
-    flex-direction: column;
+.container-fluid{
+    height: inherit;
 }
 
-.interface-0-0-0 {
-    display: flex;
+.row{
+    height: 100%;
 }
 
-.interface-gameobjectlist_instance-5 {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
+.main-component{
+    text-align: center;
+    height: 100%;
 }
 
-.interface-0-0-1 {
-    display: flex;
-    margin-top: 15px;
+.main-component-half{
+    text-align: center;
+    height: 50%;
 }
 
-.interface-fileexplorer_instance-3 {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
+.main-body{
+    height: 100%;
 }
 
-.interface-scene_instance-7 {
-    flex-shrink: 0;
-    margin-left: 25px;
-    display: flex;
-    flex-direction: column;
+body{
+    height:100%; /* force the BODY element to match the height of the HTML element */
 }
 
-.interface-inspector_instance-0 {
-    flex-shrink: 0;
-    margin-left: 19px;
-    display: flex;
-    flex-direction: column;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.pd-onhover-parent >.pd-onhover {
-    display: none;
-}
-
-.pd-onhover-parent:hover > * {
-    display: none;
-}
-
-.pd-onhover-parent:hover > .pd-onhover {
-    display: flex;
-}
-
-.pd-onactive-parent > .pd-onactive {
-    display: none;
-}
-
-.pd-onactive-parent:active > * {
-    display: none;
-}
-
-.pd-onactive-parent:active > .pd-onactive {
-    display: flex;
-}
-
-.pd-onactive-parent.pd-onhover-parent:active > .pd-onhover {
-    display: none;
+#root{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    z-index:-1; /* Remove this line if it's not going to be a background! */
 }

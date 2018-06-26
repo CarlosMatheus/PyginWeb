@@ -41,9 +41,9 @@
 }
 
 .inspector-rectangle_3 {
-    width: 160px;
     height: 30px;
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     background: rgb(162, 160, 160);
 }
 

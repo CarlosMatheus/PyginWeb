@@ -51,9 +51,9 @@
 }
 
 .gameobjectlist-rectangle_3 {
-    width: 160px;
     height: 30px;
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     background: rgb(162, 160, 160);
 }
 
@@ -64,6 +64,9 @@
 .gameobjectlist-rectangle-5 {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
     padding-top: 5px;
     padding-bottom: 5px;
     background: #D8D8D8;
@@ -166,6 +169,9 @@
 .gameobjectlist-rectangle_2-3 {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
     margin-left: 5px;
     padding-top: 8px;
     padding-bottom: 6px;
@@ -178,8 +184,8 @@
 }
 
 .gameobjectlist-text-6 {
-    width: 211px;
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(142, 142, 142);
     font-size: 14px;

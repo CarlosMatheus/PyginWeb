@@ -8,28 +8,34 @@ import './interface.css';
 
 const Editor = () => {
   return (
-    <div className="interface-interface-5">
-        <div className="interface-0">
-            <div className="interface-0-0">
-                <div className="interface-0-0-0">
-                    <div className="interface-gameobjectlist_instance-5">
-                        <Gameobjectlist />
+      <div className="main-body">
+          <div className="container-fluid">
+              <div className="row">
+                <div className="interface-interface-5">
+                    <div className="interface-0">
+                        <div className="col">
+                            <div className="main-component-half">
+                                <Gameobjectlist />
+                            </div>
+                            <div className="main-component-half">
+                                <Fileexplorer />
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="main-component">
+                                <Scene />
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="main-component">
+                                <Inspector />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="interface-0-0-1">
-                    <div className="interface-fileexplorer_instance-3">
-                        <Fileexplorer />
-                    </div>
-                </div>
-            </div>
-            <div className="interface-scene_instance-7">
-                <Scene />
-            </div>
-            <div className="interface-inspector_instance-0">
-                <Inspector />
-            </div>
-        </div>
-    </div>
+              </div>
+          </div>
+      </div>
   )
 }
 

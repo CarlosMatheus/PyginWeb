@@ -22,7 +22,7 @@ function render() {
         <div className="gameobjectlist-1">
             <div className="gameobjectlist-rectangle-5">
                 <div className="gameobjectlist-1-0-0">
-                    <div className="gameobjectlist-rectangle_2">
+                    <div onClick={this.props.handleClick} className="gameobjectlist-rectangle_2">
                         <div className="gameobjectlist-1-0-0-0-0">
                             <div className="gameobjectlist-1-0-0-0-0-0">
                                 <div className="gameobjectlist-1-0-0-0-0-0-0">
