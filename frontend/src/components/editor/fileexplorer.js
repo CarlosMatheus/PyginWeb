@@ -12,7 +12,7 @@ function render() {
                         <div className="fileexplorer-0-0-0-0-0">
                             <div className="fileexplorer-0-0-0-0-0-0">
                                 <div className="fileexplorer-0-0-0-0-0-0-0">
-                                    <div className="fileexplorer-rectangle_4" /> 
+                                    <div className="fileexplorer-rectangle_4"/>
                                 </div>
                             </div>
                             <div className="fileexplorer-0-0-0-0-0-1">
@@ -24,7 +24,7 @@ function render() {
                             </div>
                             <div className="fileexplorer-0-0-0-0-0-2">
                                 <div className="fileexplorer-0-0-0-0-0-2-0">
-                                    <div className="fileexplorer-rectangle_4-7" /> 
+                                    <div className="fileexplorer-rectangle_4-7"/>
                                 </div>
                             </div>
                         </div>
@@ -35,9 +35,47 @@ function render() {
         <div className="fileexplorer-1">
             <div className="fileexplorer-rectangle-5">
                 <div className="fileexplorer-1-0-0">
-                    <div className="fileexplorer-rectangle_2">
+                    <div className="fileexplorer-rectangle_2" onClick={() => {
+                        window.alert("request POST");
+                        const data = {
+                            name: "testedonegocio",
+                            creation_date: "2018-06-15T01:01:00Z",
+                            user: 1,
+                        };
+                        // fetch("http://127.0.0.1:8000/api/", {
+                        //         method: "post",
+                        //         headers: {
+                        //             "Content-Type": "application/json",
+                        //         },
+                        //         body: JSON.stringify(data),
+                        //     }).then(function (response) {
+                        //         return response.json();
+                        //     }).then(function (data) {
+                        //         console.log("Data is ok", data);
+                        //     }).catch(function (ex) {
+                        //         console.log("parsing failed", ex);
+                        //     });
+                        axios.defaults.xsrfCookieName = 'csrftoken';
+                        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+                        // axios.post(
+                        //     "http://127.0.0.1:8000/api/", {
+                        //         headers: {
+                        //             contentType: 'application/json',
+                        //         },
+                        //         body: {
+                        //             name: "testedonegocio2",
+                        //             creation_date: "2018-06-15T01:01:00Z",
+                        //             user: 1,
+                        //         }
+                        //     })
+                        axios.post("http://127.0.0.1:8000/api/"
+                            ,JSON.stringify(data),
+                            {headers: headers
+                            });
+                    }
+                    }>
                         <div className="fileexplorer-1-0-0-0-0">
-                            <div className="fileexplorer-rectangle_1" /> 
+                            <div className="fileexplorer-rectangle_1"/>
                             <div className="fileexplorer-1-0-0-0-0-1">
                                 <div className="fileexplorer-1-0-0-0-0-1-0">
                                     <div className="fileexplorer-text-0">Create</div>
@@ -46,13 +84,14 @@ function render() {
                             <div className="fileexplorer-1-0-0-0-0-2">
                                 <div className="fileexplorer-1-0-0-0-0-2-0">
                                     <div className="fileexplorer-triangle-4">
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="fileexplorer-1-0-0-0-0-2-0-0-0">
-                                            <polygon points="0 4 4 0 4 4" className="fileexplorer-1-0-0-0-0-2-0-0-0-0" /> 
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"
+                                             className="fileexplorer-1-0-0-0-0-2-0-0-0">
+                                            <polygon points="0 4 4 0 4 4" className="fileexplorer-1-0-0-0-0-2-0-0-0-0"/>
                                         </svg>
                                     </div>
                                 </div>
                             </div>
-                            <div className="fileexplorer-rectangle_12" /> 
+                            <div className="fileexplorer-rectangle_12"/>
                         </div>
                     </div>
                     <div className="fileexplorer-rectangle_2-3">
@@ -64,11 +103,11 @@ function render() {
             </div>
         </div>
         <div className="fileexplorer-2">
-            <div className="fileexplorer-rectangle-58" /> 
+            <div className="fileexplorer-rectangle-58"/>
         </div>
     </div>;
 };
 
-export default function(props) {
+export default function (props) {
     return render.apply({props: props});
 }
