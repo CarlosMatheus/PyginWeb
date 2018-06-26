@@ -50,6 +50,17 @@ WEBPACK_LOADER = {
         }
 }
 
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': (
+    'rest_framework.permissions.AllowAny',
+  ),
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework.authentication.TokenAuthentication',
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication',
+  )
+}
+
 CSRF_COOKIE_NAME = "csrftoken"
 
 MIDDLEWARE = [
