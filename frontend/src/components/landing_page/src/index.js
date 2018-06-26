@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import MainScreen from './pagedraw/pythoneng'
 
 const LandingPage = () => {
-  return <MainScreen />;
+    return <MainScreen />;
 }
 
 export default LandingPage
