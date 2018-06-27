@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 136px;
+    padding-bottom: 75px;
     background: rgb(56, 56, 56);
 }
 
@@ -318,6 +318,7 @@
     flex-direction: column;
     padding-top: 1px;
     border-radius: 10px;
+    cursor: text;
     background: rgb(63, 63, 63);
 }
 
@@ -330,6 +331,7 @@
 .inspector-text-1 {
     width: 64px;
     flex-shrink: 0;
+    cursor: text;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(136, 136, 136);
     font-size: 8px;
@@ -351,6 +353,17 @@
     flex-grow: 1;
     flex-basis: 0px;
     background: rgb(31, 31, 31);
+}
+
+.inspector-2 {
+    display: flex;
+}
+
+.inspector-transform_instance-7 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
