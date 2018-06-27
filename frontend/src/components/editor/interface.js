@@ -11,39 +11,6 @@ class Editor extends React.Component {
     render() {
         return (
             <div className="main-body">
-                {/*<nav className="navbar navbar-default">*/}
-                    {/*<div className="container">*/}
-                        {/*<div className="row navbar-row">*/}
-                            {/*<div className="col-6">*/}
-                                {/*<div className="navbar-header">*/}
-                                    {/*<a className="navbar-brand" href="#">WebSiteName</a>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-                            {/*<div className="col navbar-div">*/}
-                                {/*<a href="#" className="navbar-link">*/}
-                                    {/*1*/}
-                                {/*</a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col navbar-div">*/}
-                                {/*<a href="#" className="navbar-link">*/}
-                                    {/*1*/}
-                                {/*</a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col navbar-div">*/}
-                                {/*<a href="#" className="navbar-link">*/}
-                                    {/*1*/}
-                                {/*</a>*/}
-                            {/*</div>*/}
-                            {/*<div className="col navbar-div">*/}
-                                {/*<a href="#" className="navbar-link">*/}
-                                    {/*1*/}
-                                {/*</a>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</nav>*/}
-
-
                 <div className="container-fluid">
                     <ProjectSelector />
                     <div className="row">
