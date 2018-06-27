@@ -76,9 +76,13 @@ function render() {
                                                                                                         Create
                                                                                                     </div>
                                                                                                     <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
-                                                                                                        <a className="dropdown-item" href="#">Action</a>
-                                                                                                        <a className="dropdown-item" href="#">Another action</a>
-                                                                                                        <a className="dropdown-item" href="#">Something else here</a>
+                                                                                                        <a className="dropdown-item" href="#">Rectangle</a>
+                                                                                                        <a className="dropdown-item" href="#">Circle</a>
+                                                                                                        <a className="dropdown-item" href="#">Polygon</a>
+                                                
+                                                <a className="dropdown-item" href="#">Sprite</a>
+                                                
+                                                <a className="dropdown-item" href="#">Text</a>
                                                                                                     </div>
                                                                                             </div>
                                             </div>

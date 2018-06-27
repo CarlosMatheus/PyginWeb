@@ -12,8 +12,17 @@
 }
 
 .my-dropdown{
-    background-color: #37383D;
-    color: #D8D8D8;
+    background-color: #414141;
+    color: #888888;
+}
+
+.dropdown-item:hover{
+    background-color: #616161;
+    color: #888888;
+}
+
+.dropdown-item{
+    color: #888888;
 }
 
 .navbar-row{

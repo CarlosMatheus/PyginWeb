@@ -50,9 +50,12 @@ function render() {
                                                                                                         Create
                                                                                                     </div>
                                                                                                     <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
-                                                                                                        <a className="dropdown-item" href="#">Action</a>
-                                                                                                        <a className="dropdown-item" href="#">Another action</a>
-                                                                                                        <a className="dropdown-item" href="#">Something else here</a>
+                                                                                                        <a className="dropdown-item" href="#">GameObject</a>
+                                                                                                        <a className="dropdown-item" href="#">Controller</a>
+                                                
+                                                <a className="dropdown-item" href="#">Scene</a>
+                                                
+                                                <a className="dropdown-item" href="#">Animation</a>
                                                                                                     </div>
                                                                                             </div>
                                             </div>
