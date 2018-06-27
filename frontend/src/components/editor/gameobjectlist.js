@@ -29,7 +29,7 @@ function render() {
                             </div>
                         </div>
                     </div>
-                    <div className="gameobjectlist-0-0-0-1" /> 
+                    <div className="gameobjectlist-0-0-0-1"/>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@ function render() {
                                 <div className="gameobjectlist-1-0-0-0-0-0-0">
                                     <div className="gameobjectlist-1-0-0-0-0-0-0-0">
                                         <div className="gameobjectlist-1-0-0-0-0-0-0-0-0">
-                                            <div className="gameobjectlist-rectangle_4-8" /> 
+                                            <div className="gameobjectlist-rectangle_4-8"/>
                                         </div>
                                     </div>
                                     <div className="gameobjectlist-1-0-0-0-0-0-0-1">
@@ -54,7 +54,7 @@ function render() {
                                     </div>
                                     <div className="gameobjectlist-1-0-0-0-0-0-0-2">
                                         <div className="gameobjectlist-1-0-0-0-0-0-0-2-0">
-                                            <div className="gameobjectlist-rectangle_4-1" /> 
+                                            <div className="gameobjectlist-rectangle_4-1"/>
                                         </div>
                                     </div>
                                 </div>
@@ -67,38 +67,45 @@ function render() {
                         <div className="gameobjectlist-1-0-1-0-0">
                             <div className="gameobjectlist-rectangle_2-8">
                                 <div className="gameobjectlist-1-0-1-0-0-0-0">
-                                    <div className="gameobjectlist-rectangle_1" /> 
+                                    <div className="gameobjectlist-rectangle_1"/>
                                     <div className="gameobjectlist-1-0-1-0-0-0-0-1">
                                         <div className="gameobjectlist-1-0-1-0-0-0-0-1-0">
                                             <div className="gameobjectlist-text-5">
                                                 <div className="dropdown">
-                                                                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
-                                                                                                            aria-haspopup="true" aria-expanded="false">
-                                                                                                        Create
-                                                                                                    </div>
-                                                                                                    <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
-                                                                                                        <a className="dropdown-item" href="#">Rectangle</a>
-                                                                                                        <a className="dropdown-item" href="#">Circle</a>
-                                                                                                        <a className="dropdown-item" href="#">Polygon</a>
-                                                
-                                                <a className="dropdown-item" href="#">Sprite</a>
-                                                
-                                                <a className="dropdown-item" href="#">Text</a>
-                                                                                                    </div>
-                                                                                            </div>
+                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton"
+                                                         data-toggle="dropdown"
+                                                         aria-haspopup="true" aria-expanded="false">
+                                                        Create
+                                                    </div>
+                                                    <div className="dropdown-menu my-dropdown"
+                                                         aria-labelledby="dropdownMenuButton">
+                                                        <a className="dropdown-item" href="#"
+                                                           onClick={() => this.props.create_game_object('Rectangle')}>Rectangle</a>
+                                                        <a className="dropdown-item" href="#"
+                                                           onClick={() => this.props.create_game_object('Circle')}>Circle</a>
+                                                        <a className="dropdown-item" href="#"
+                                                           onClick={() => this.props.create_game_object('Polygon')}>Polygon</a>
+                                                        <a className="dropdown-item" href="#"
+                                                           onClick={() => this.props.create_game_object('Sprite')}>Sprite</a>
+                                                        <a className="dropdown-item" href="#"
+                                                           onClick={() => this.props.create_game_object('Text')}>Text</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="gameobjectlist-1-0-1-0-0-0-0-2">
                                         <div className="gameobjectlist-1-0-1-0-0-0-0-2-0">
                                             <div className="gameobjectlist-triangle-0">
-                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="gameobjectlist-1-0-1-0-0-0-0-2-0-0-0">
-                                                    <polygon points="0 4 4 0 4 4" className="gameobjectlist-1-0-1-0-0-0-0-2-0-0-0-0" /> 
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"
+                                                     className="gameobjectlist-1-0-1-0-0-0-0-2-0-0-0">
+                                                    <polygon points="0 4 4 0 4 4"
+                                                             className="gameobjectlist-1-0-1-0-0-0-0-2-0-0-0-0"/>
                                                 </svg>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="gameobjectlist-rectangle_12" /> 
+                                    <div className="gameobjectlist-rectangle_12"/>
                                 </div>
                             </div>
                             <div className="gameobjectlist-1-0-1-0-0-1">
@@ -114,43 +121,24 @@ function render() {
                     </div>
                 </div>
                 <div className="gameobjectlist-1-0-2">
-                    <div className="gameobjectlist-rectangle-2" /> 
+                    <div className="gameobjectlist-rectangle-2"/>
                 </div>
             </div>
         </div>
-        <div className="gameobjectlist-2">
-            <div className="gameobjectlist-list_item_instance-6">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="gameobjectlist-3">
-            <div className="gameobjectlist-list_item_instance-9">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="gameobjectlist-4">
-            <div className="gameobjectlist-list_item_instance-4">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="gameobjectlist-5">
-            <div className="gameobjectlist-list_item_instance-92">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="gameobjectlist-6">
-            <div className="gameobjectlist-list_item_instance-7">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="gameobjectlist-7">
-            <div className="gameobjectlist-list_item_instance-5">
-                <List_item name={""} /> 
-            </div>
-        </div>
+        {
+            this.props.game_objects.map((game_object) => {
+                return (
+                    <div className="gameobjectlist-item">
+                        <div className="gameobjectlist-list_item_instance">
+                            <List_item name={game_object}/>
+                        </div>
+                    </div>
+                )
+            })
+        }
     </div>;
 };
 
-export default function(props) {
+export default function (props) {
     return render.apply({props: props});
 }

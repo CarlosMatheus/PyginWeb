@@ -3,13 +3,13 @@ import React from 'react';
 import './list_item.css';
 import './list_item_style.css'
 
-function render() {
+function render(props) {
     return <div className="list_item-list_item-1">
         <div className="list_item-0">
             <div className="list_item-rectangle_2">
                 <div className="list_item-0-0-0">
                     <div className="list_item-gameobjectlist-5">
-                        My_game_object1
+                        {props.name}
                     </div>
                 </div>
             </div>
@@ -18,5 +18,5 @@ function render() {
 };
 
 export default function(props) {
-    return render.apply({props: props});
+    return render(props);
 }

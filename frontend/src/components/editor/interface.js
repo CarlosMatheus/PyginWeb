@@ -8,20 +8,41 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 
 class Editor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            game_objects: [],
+            game_object_count: {'Rectangle': 0, 'Circle':0, 'Polygon':0, 'Sprite':0, 'Text':0}
+        }
+    }
+
+    createGameObject(name){
+        const game_objects = this.state.game_objects;
+        const game_object_count = this.state.game_object_count;
+        game_object_count[name]++;
+        game_objects.push(name + "_" + game_object_count[name]);
+        this.setState({
+            game_objects: game_objects,
+            game_object_count: game_object_count,
+        });
+    }
+
     render() {
         return (
             <div className="main-body">
                 <div className="container-fluid">
-                    <ProjectSelector />
+                    <ProjectSelector/>
                     <div className="row">
                         <div className="interface-interface-5">
                             <div className="interface-0">
                                 <div className="col">
                                     <div className="main-component-half-1">
-                                        <Gameobjectlist />
+                                        <Gameobjectlist game_objects={this.state.game_objects}
+                                                        create_game_object={(name)=>this.createGameObject(name)}
+                                        />
                                     </div>
                                     <div className="main-component-half-2">
-                                        <Fileexplorer />
+                                        <Fileexplorer/>
                                     </div>
                                 </div>
                                 <div className="col-6">
