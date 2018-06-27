@@ -13,7 +13,8 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            project: 'No Project Selected',
+            selectorIsOpen: true,
+            project: 'New Project',
             game_objects: [],
             selected_scene: 0,
             scenes: [new SceneGame('Scene_1')],
@@ -26,6 +27,31 @@ class Editor extends React.Component {
                 'Controller': 0, 'Animation': 0
             }
         }
+    }
+
+    setTitle() {
+        if (this.state.selectorIsOpen)
+            document.title = "Select Project";
+        else document.title = this.state.project;
+    }
+
+    changeCurrentProject(newProj) {
+        this.setState({
+            project: newProj
+        })
+//        console.log(newProj);
+    }
+
+    openSelector() {
+        this.setState({
+            selectorIsOpen: true
+        })
+    }
+
+    closeSelector() {
+        this.setState({
+            selectorIsOpen: false
+        })
     }
 
     createGameObject(name) {
@@ -65,10 +91,15 @@ class Editor extends React.Component {
     }
 
     render() {
+        this.setTitle();
         return (
             <div className="main-body">
                 <div className="container-fluid">
-                    <ProjectSelector/>
+                    <ProjectSelector
+                        open={this.state.selectorIsOpen}
+                        onClose={() => this.closeSelector()}
+                        changeCurrentProject={(newProj) => this.changeCurrentProject(newProj)}
+                    />
                     <div className="row">
                         <div className="interface-interface-5">
                             <div className="interface-0">
@@ -76,6 +107,7 @@ class Editor extends React.Component {
                                     <div className="main-component-half-1">
                                         <Gameobjectlist game_objects={this.state.game_objects}
                                                         create_game_object={(name) => this.createGameObject(name)}
+                                                        handleClick={() => this.openSelector()}
                                         />
                                     </div>
                                     <div className="main-component-half-2">

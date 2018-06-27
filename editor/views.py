@@ -4,6 +4,8 @@ from .models import Scene, Project
 from .serializers import SceneSerializer, ProjectSerializer
 import datetime
 
+"""Views for project"""
+
 
 class ListProjects(generics.ListCreateAPIView):
     queryset = Project.objects.all()
@@ -23,7 +25,7 @@ class DetailProjects(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Scene.objects.filter(user=user)
+        return Project.objects.filter(user=user)
 
 
 class DestroyProjects(generics.DestroyAPIView):
@@ -33,20 +35,16 @@ class DestroyProjects(generics.DestroyAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Scene.objects.filter(user=user)
+        return Project.objects.filter(user=user)
+
+
+"""Views for scene"""
 
 
 class ListScenes(generics.ListCreateAPIView):
     queryset = Scene.objects.all()
     serializer_class = SceneSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user, creation_date=datetime.datetime.now())
-
-
-class DetailScene(generics.ListAPIView):
-    queryset = Scene.objects.all()
-    serializer_class = SceneSerializer
+    lookup_field = "project"
 
     def get_queryset(self):
         user = self.request.user

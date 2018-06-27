@@ -102,7 +102,7 @@ function render() {
         {
             this.props.game_objects.map((game_object) => {
                 return (
-                    <div className="gameobjectlist-item">
+                    <div key={game_object} className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={'GameObject_' + game_object.name}/>
                         </div>
@@ -113,7 +113,7 @@ function render() {
         {
             this.props.files.map((file) => {
                 return (
-                    <div className="gameobjectlist-item">
+                    <div key={file} className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={file}/>
                         </div>
@@ -124,7 +124,7 @@ function render() {
         {
             this.props.scenes.map((scene) => {
                 return (
-                    <div className="gameobjectlist-item"
+                    <div key={scene} className="gameobjectlist-item"
                          onClick={()=>this.props.change_scene(this.props.scenes.indexOf(scene))}>
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={scene.name}/>

@@ -7,7 +7,7 @@ import './project_selector.css';
 function Project(props) {
     return (
         <div>{props.name}
-            <button onClick={() => props.onClickSelect().then(props.onClickSelect())}>
+            <button onClick={() => props.onClickSelect()}>
                 Delete
             </button>
 
@@ -20,7 +20,7 @@ class CreateProject extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            projecName: "No Name",
+            projectName: "New Project",
         }
 
     }
@@ -42,12 +42,14 @@ class CreateProject extends React.Component {
             <div>
                 <button onClick={() => {
                     this.props.onClick();
-                    CreateProject.createProject(this.state.projecName)
+                    CreateProject.createProject(this.state.projectName);
+                    this.props.changeCurrentProject(this.state.projectName);
+                    this.props.updateList();
                 }}>
                     Add Project
                 </button>
                 <input type="text" onChange={(evt) => {
-                    this.state.projecName = evt.target.value
+                    this.state.projectName = evt.target.value
                 }}>{}</input>
             </div>
         )
@@ -59,60 +61,52 @@ class ProjectSelector extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: true,
             items: []
         };
     }
 
-    getList(){
-        axios.get('http://127.0.0.1:8000/api/projects/')
-            .then(response => this.setState({
-                    open: true,
-                    items: response.data.map((proj) => proj.name)
-                })
-            )
+    getList() {
+        for (var i = 0; i < 2; i++)
+            axios.get('http://127.0.0.1:8000/api/projects/')
+                .then(response => this.setState({
+                        items: response.data.map((proj) => proj.name)
+                    })
+                )
     }
 
     componentDidMount() {
         this.getList();
     }
 
-    openModal = () => {
-        this.setState({open: true});
-    };
-    closeModal = () => {
-        this.setState({open: false});
-    };
-
     deleteProject(name) {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         axios.delete('http://127.0.0.1:8000/api/projects/destroy/' + name + '/');
         this.getList();
+        this.props.changeCurrentProject('New Project');
     }
 
     render() {
-        if (this.state.open) {
-            return (
-                <Popup open={this.openModal}>
-                    <div className="modal">
-                        {
-                            this.state.items.map((item) => {
-                                return (
-                                    <Project name={item}
-                                             onClickSelect={() =>
-                                                 this.deleteProject(item)}/>
-                                )
-                            })
-                        }
-                        <CreateProject onClick={() => {
-                            this.closeModal()
-                        }}/>
-                    </div>
-                </Popup>
-            )
-        }
-        else return null
+        return (
+            <Popup open={this.props.open} onClose={this.props.onClose}>
+                <div className="modal">
+                    {
+                        this.state.items.map((item) => {
+                            return (
+                                <Project key={item} name={item}
+                                         onClickSelect={() => this.deleteProject(item)}
+                                />
+                            )
+                        })
+                    }
+                    <CreateProject
+                        onClick={() => {this.props.onClose()}}
+                        changeCurrentProject={this.props.changeCurrentProject}
+                        updateList={() => {this.getList()}}
+                    />
+                </div>
+            </ Popup>
+        )
     }
 }
 

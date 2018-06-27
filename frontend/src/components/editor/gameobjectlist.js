@@ -128,7 +128,7 @@ function render() {
         {
             this.props.game_objects.map((game_object) => {
                 return (
-                    <div className="gameobjectlist-item">
+                    <div key={game_object} className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={game_object.name}/>
                         </div>
