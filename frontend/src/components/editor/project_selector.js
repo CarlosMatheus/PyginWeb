@@ -92,10 +92,10 @@ class ProjectSelector extends React.Component {
         this.getList();
     }
 
-    deleteProject(name) {
+    deleteProject(id) {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-        axios.delete('http://127.0.0.1:8000/api/projects/destroy/' + name + '/');
+        axios.delete('http://127.0.0.1:8000/api/projects/destroy/' + id + '/');
         this.getList();
         this.props.changeCurrentProject('New Project', 0);
     }
@@ -105,9 +105,9 @@ class ProjectSelector extends React.Component {
             <Popup open={this.props.open} onClose={this.props.onClose}>
                 <div className="modal">
                     {
-                        this.state.items.map((item) => {
+                        this.state.indexes.map((item) => {
                             return (
-                                <Project key={item} name={item}
+                                <Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}
                                          onClickSelect={() => this.deleteProject(item)}
                                 />
                             )

@@ -31,7 +31,7 @@ class DetailProjects(generics.ListAPIView):
 class DestroyProjects(generics.DestroyAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    lookup_field = "name"
+    lookup_field = "id"
 
     def get_queryset(self):
         user = self.request.user
