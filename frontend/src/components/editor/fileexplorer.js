@@ -54,9 +54,12 @@ function render() {
                                                          aria-labelledby="dropdownMenuButton">
                                                         <a className="dropdown-item" href="#"
                                                         onClick={() => this.props.create_game_object('Generic')}>GameObject</a>
-                                                        <a className="dropdown-item" href="#">Controller</a>
-                                                        <a className="dropdown-item" href="#">Scene</a>
-                                                        <a className="dropdown-item" href="#">Animation</a>
+                                                        <a className="dropdown-item" href="#"
+                                                        onClick={() => this.props.create_file('Controller')}>Controller</a>
+                                                        <a className="dropdown-item" href="#"
+                                                        onClick={() => this.props.create_file('Scene')}>Scene</a>
+                                                        <a className="dropdown-item" href="#"
+                                                        onClick={() => this.props.create_file('Animation')}>Animation</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,7 +104,18 @@ function render() {
                 return (
                     <div className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
-                            <List_item name={'GameObject_' + game_object}/>
+                            <List_item name={'GameObject_' + game_object.name}/>
+                        </div>
+                    </div>
+                )
+            })
+        }
+        {
+            this.props.files.map((file) => {
+                return (
+                    <div className="gameobjectlist-item">
+                        <div className="gameobjectlist-list_item_instance">
+                            <List_item name={file}/>
                         </div>
                     </div>
                 )

@@ -130,7 +130,7 @@ function render() {
                 return (
                     <div className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
-                            <List_item name={game_object}/>
+                            <List_item name={game_object.name}/>
                         </div>
                     </div>
                 )
