@@ -9,5 +9,7 @@ urlpatterns = [
     path('projects/destroy/<id>/', views.DestroyProjects.as_view()),
 
     # Paths for scene
-    path('scenes/', views.ListScenes.as_view()),
+    path('scenes/', views.CreateScene.as_view()),
+    path('scenes/<project>/', views.ListScenes.as_view()),
+    path('scenes/destroy/<id>/', views.DestroyScene.as_view()),
 ]

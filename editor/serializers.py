@@ -22,3 +22,14 @@ class SceneSerializer(serializers.ModelSerializer):
         )
 
         model = models.Scene
+
+
+class SceneGetSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'id',
+            'name',
+            'project',
+        )
+
+        model = models.Scene
