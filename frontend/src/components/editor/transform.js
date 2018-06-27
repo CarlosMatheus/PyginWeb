@@ -128,7 +128,7 @@ function render() {
                                             <div className="transform-text-5">X</div>
                                         </div>
                                     </div>
-                                    <input type="text" placeholder="0" className="transform-text_input_2-6" /> 
+                                    <input type="text" placeholder="1" className="transform-text_input_2-6" /> 
                                 </div>
                             </div>
                             <div className="transform-rectangle_28-17">
@@ -138,7 +138,7 @@ function render() {
                                             <div className="transform-text-77">Y</div>
                                         </div>
                                     </div>
-                                    <input type="text" placeholder="0" className="transform-text_input-45" /> 
+                                    <input type="text" placeholder="1" className="transform-text_input-45" /> 
                                 </div>
                             </div>
                             <div className="transform-rectangle_28-3">
@@ -148,7 +148,7 @@ function render() {
                                             <div className="transform-text-88">Z</div>
                                         </div>
                                     </div>
-                                    <input type="text" placeholder="0" className="transform-text_input-8" /> 
+                                    <input type="text" placeholder="1" className="transform-text_input-8" /> 
                                 </div>
                             </div>
                         </div>
