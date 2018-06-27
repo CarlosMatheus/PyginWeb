@@ -1,0 +1,6 @@
+.list_item-list_item-1:hover {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #616161;
+}

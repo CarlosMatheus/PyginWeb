@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 55px;
+    padding-bottom: 32px;
     background: rgb(56, 56, 56);
 }
 
@@ -266,10 +266,10 @@
 }
 
 .fileexplorer-list_item_instance-6 {
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     display: flex;
     flex-direction: column;
-    min-width: 220px;
 }
 
 .fileexplorer-3 {
@@ -277,10 +277,10 @@
 }
 
 .fileexplorer-list_item_instance-8 {
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     display: flex;
     flex-direction: column;
-    min-width: 220px;
 }
 
 .fileexplorer-4 {
@@ -288,10 +288,10 @@
 }
 
 .fileexplorer-list_item_instance-0 {
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     display: flex;
     flex-direction: column;
-    min-width: 220px;
 }
 
 .fileexplorer-5 {
@@ -299,10 +299,21 @@
 }
 
 .fileexplorer-list_item_instance-2 {
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0px;
     display: flex;
     flex-direction: column;
-    min-width: 220px;
+}
+
+.fileexplorer-6 {
+    display: flex;
+}
+
+.fileexplorer-list_item_instance-4 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 * {

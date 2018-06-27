@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 86px;
+    padding-bottom: 12px;
     background: rgb(56, 56, 56);
 }
 
@@ -346,6 +346,72 @@
     flex-grow: 1;
     flex-basis: 0px;
     background: rgb(31, 31, 31);
+}
+
+.gameobjectlist-2 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-6 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameobjectlist-3 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-9 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameobjectlist-4 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-4 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameobjectlist-5 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-92 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameobjectlist-6 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-7 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameobjectlist-7 {
+    display: flex;
+}
+
+.gameobjectlist-list_item_instance-5 {
+    flex-grow: 1;
+    flex-basis: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
