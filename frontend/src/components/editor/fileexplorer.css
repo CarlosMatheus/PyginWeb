@@ -11,6 +11,18 @@
     display: flex;
 }
 
+.fileexplorer-rectangle_19 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
+}
+
+.fileexplorer-0-0-0 {
+    display: flex;
+}
+
 .fileexplorer-rectangle_3 {
     display: flex;
     flex-direction: column;
@@ -20,7 +32,7 @@
     background: rgb(30, 30, 30);
 }
 
-.fileexplorer-0-0-0 {
+.fileexplorer-0-0-0-0-0 {
     display: flex;
     padding-right: 80px;
 }
@@ -33,17 +45,17 @@
     background: rgb(51, 51, 51);
 }
 
-.fileexplorer-0-0-0-0-0 {
+.fileexplorer-0-0-0-0-0-0-0 {
     display: flex;
 }
 
-.fileexplorer-0-0-0-0-0-0 {
+.fileexplorer-0-0-0-0-0-0-0-0 {
     display: flex;
     flex-direction: column;
     padding-top: 7px;
 }
 
-.fileexplorer-0-0-0-0-0-0-0 {
+.fileexplorer-0-0-0-0-0-0-0-0-0 {
     display: flex;
 }
 
@@ -54,13 +66,13 @@
     background: rgb(51, 51, 51);
 }
 
-.fileexplorer-0-0-0-0-0-1 {
+.fileexplorer-0-0-0-0-0-0-0-1 {
     display: flex;
     flex-direction: column;
     padding-bottom: 3px;
 }
 
-.fileexplorer-0-0-0-0-0-1-0 {
+.fileexplorer-0-0-0-0-0-0-0-1-0 {
     display: flex;
 }
 
@@ -79,13 +91,13 @@
     word-wrap: break-word;
 }
 
-.fileexplorer-0-0-0-0-0-2 {
+.fileexplorer-0-0-0-0-0-0-0-2 {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
 }
 
-.fileexplorer-0-0-0-0-0-2-0 {
+.fileexplorer-0-0-0-0-0-0-0-2-0 {
     display: flex;
 }
 
@@ -96,7 +108,7 @@
     background: rgb(51, 51, 51);
 }
 
-.fileexplorer-1 {
+.fileexplorer-0-0-1 {
     display: flex;
 }
 
@@ -111,7 +123,7 @@
     background: linear-gradient(180deg, rgb(51, 51, 51), rgb(29, 29, 29));
 }
 
-.fileexplorer-1-0-0 {
+.fileexplorer-0-0-1-0-0 {
     display: flex;
     padding-left: 5px;
     padding-right: 1px;
@@ -123,7 +135,7 @@
     background: rgba(47, 47, 47, 0);
 }
 
-.fileexplorer-1-0-0-0-0 {
+.fileexplorer-0-0-1-0-0-0-0 {
     display: flex;
 }
 
@@ -134,7 +146,7 @@
     background: linear-gradient(0deg, rgb(45, 45, 45), rgba(0, 0, 0, 0));
 }
 
-.fileexplorer-1-0-0-0-0-1 {
+.fileexplorer-0-0-1-0-0-0-0-1 {
     display: flex;
     flex-direction: column;
     margin-left: 4px;
@@ -142,7 +154,7 @@
     padding-bottom: 2px;
 }
 
-.fileexplorer-1-0-0-0-0-1-0 {
+.fileexplorer-0-0-1-0-0-0-0-1-0 {
     display: flex;
 }
 
@@ -161,7 +173,7 @@
     word-wrap: break-word;
 }
 
-.fileexplorer-1-0-0-0-0-2 {
+.fileexplorer-0-0-1-0-0-0-0-2 {
     display: flex;
     flex-direction: column;
     margin-left: 2px;
@@ -169,7 +181,7 @@
     padding-bottom: 4px;
 }
 
-.fileexplorer-1-0-0-0-0-2-0 {
+.fileexplorer-0-0-1-0-0-0-0-2-0 {
     display: flex;
 }
 
@@ -178,11 +190,11 @@
     flex-shrink: 0;
 }
 
-.fileexplorer-1-0-0-0-0-2-0-0-0 {
+.fileexplorer-0-0-1-0-0-0-0-2-0-0-0 {
     display: block;
 }
 
-.fileexplorer-1-0-0-0-0-2-0-0-0-0 {
+.fileexplorer-0-0-1-0-0-0-0-2-0-0-0-0 {
     fill: rgb(136, 136, 136);
 }
 
@@ -207,7 +219,7 @@
     background: rgb(47, 47, 47);
 }
 
-.fileexplorer-1-0-0-1-0 {
+.fileexplorer-0-0-1-0-0-1-0 {
     display: flex;
     padding-left: 4px;
     padding-right: 11px;
@@ -228,7 +240,7 @@
     word-wrap: break-word;
 }
 
-.fileexplorer-2 {
+.fileexplorer-0-0-2 {
     display: flex;
 }
 

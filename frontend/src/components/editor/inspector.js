@@ -8,21 +8,21 @@ function render() {
         <div className="inspector-0">
             <div className="inspector-rectangle_3">
                 <div className="inspector-0-0-0">
-                    <div className="inspector-rectangle_4-7">
-                        <div className="inspector-0-0-0-0-0">
-                            <div className="inspector-0-0-0-0-0-0">
-                                <div className="inspector-0-0-0-0-0-0-0">
-                                    <div className="inspector-rectangle_4" /> 
+                    <div className="inspector-0-0-0-0" /> 
+                    <div className="inspector-rectangle_2">
+                        <div className="inspector-0-0-0-1-0">
+                            <div className="inspector-rectangle_4">
+                                <div className="inspector-0-0-0-1-0-0-0">
+                                    <a href="/" className="inspector-0-0-0-1-0-0-0-0">
+                                        <div className="inspector-gameobjectlist-1">Home</div>
+                                    </a>
                                 </div>
                             </div>
-                            <div className="inspector-0-0-0-0-0-1">
-                                <div className="inspector-0-0-0-0-0-1-0">
-                                    <div className="inspector-gameobjectlist-2">Inspector</div>
-                                </div>
-                            </div>
-                            <div className="inspector-0-0-0-0-0-2">
-                                <div className="inspector-0-0-0-0-0-2-0">
-                                    <div className="inspector-rectangle_4-3" /> 
+                            <div className="inspector-rectangle_4-5">
+                                <div className="inspector-0-0-0-1-0-1-0">
+                                    <a href="/home/" className="inspector-0-0-0-1-0-1-0-0">
+                                        <div className="inspector-gameobjectlist-8">Account</div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -31,38 +31,67 @@ function render() {
             </div>
         </div>
         <div className="inspector-1">
-            <div className="inspector-rectangle-3">
+            <div className="inspector-rectangle_22">
                 <div className="inspector-1-0-0">
-                    <div className="inspector-rectangle_2">
+                    <div className="inspector-rectangle_3-2">
                         <div className="inspector-1-0-0-0-0">
-                            <div className="inspector-rectangle_1" /> 
-                            <div className="inspector-1-0-0-0-0-1">
-                                <div className="inspector-1-0-0-0-0-1-0">
-                                    <div className="inspector-text-9">Create</div>
-                                </div>
-                            </div>
-                            <div className="inspector-1-0-0-0-0-2">
-                                <div className="inspector-1-0-0-0-0-2-0">
-                                    <div className="inspector-triangle-5">
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="inspector-1-0-0-0-0-2-0-0-0">
-                                            <polygon points="0 4 4 0 4 4" className="inspector-1-0-0-0-0-2-0-0-0-0" /> 
-                                        </svg>
+                            <div className="inspector-rectangle_4-7">
+                                <div className="inspector-1-0-0-0-0-0-0">
+                                    <div className="inspector-1-0-0-0-0-0-0-0">
+                                        <div className="inspector-1-0-0-0-0-0-0-0-0">
+                                            <div className="inspector-rectangle_4-4" /> 
+                                        </div>
+                                    </div>
+                                    <div className="inspector-1-0-0-0-0-0-0-1">
+                                        <div className="inspector-1-0-0-0-0-0-0-1-0">
+                                            <div className="inspector-gameobjectlist-2">Inspector</div>
+                                        </div>
+                                    </div>
+                                    <div className="inspector-1-0-0-0-0-0-0-2">
+                                        <div className="inspector-1-0-0-0-0-0-0-2-0">
+                                            <div className="inspector-rectangle_4-3" /> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="inspector-rectangle_12" /> 
-                        </div>
-                    </div>
-                    <div className="inspector-rectangle_2-6">
-                        <div className="inspector-1-0-0-1-0">
-                            <div className="inspector-text-8">Search...</div>
                         </div>
                     </div>
                 </div>
+                <div className="inspector-1-0-1">
+                    <div className="inspector-rectangle-3">
+                        <div className="inspector-1-0-1-0-0">
+                            <div className="inspector-rectangle_2-8">
+                                <div className="inspector-1-0-1-0-0-0-0">
+                                    <div className="inspector-rectangle_1" /> 
+                                    <div className="inspector-1-0-1-0-0-0-0-1">
+                                        <div className="inspector-1-0-1-0-0-0-0-1-0">
+                                            <div className="inspector-text-9">Create</div>
+                                        </div>
+                                    </div>
+                                    <div className="inspector-1-0-1-0-0-0-0-2">
+                                        <div className="inspector-1-0-1-0-0-0-0-2-0">
+                                            <div className="inspector-triangle-5">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="inspector-1-0-1-0-0-0-0-2-0-0-0">
+                                                    <polygon points="0 4 4 0 4 4" className="inspector-1-0-1-0-0-0-0-2-0-0-0-0" /> 
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="inspector-rectangle_12" /> 
+                                </div>
+                            </div>
+                            <div className="inspector-rectangle_2-6">
+                                <div className="inspector-1-0-1-0-0-1-0">
+                                    <div className="inspector-text-8">Search...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="inspector-1-0-2">
+                    <div className="inspector-rectangle-0" /> 
+                </div>
             </div>
-        </div>
-        <div className="inspector-2">
-            <div className="inspector-rectangle-0" /> 
         </div>
     </div>;
 };
