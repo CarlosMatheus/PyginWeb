@@ -29,48 +29,36 @@ function render() {
                             <div className="transform-text-8">Position</div>
                         </div>
                     </div>
-                    <div className="transform-rectangle_28">
+                    <div className="transform-rectangle_27">
                         <div className="transform-1-0-0-1-0">
-                            <div className="transform-rectangle_27">
+                            <div className="transform-rectangle_2">
                                 <div className="transform-1-0-0-1-0-0-0">
                                     <div className="transform-1-0-0-1-0-0-0-0">
                                         <div className="transform-1-0-0-1-0-0-0-0-0">
                                             <div className="transform-text-3">X</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2">
-                                        <div className="transform-1-0-0-1-0-0-0-1-0">
-                                            <div className="transform-text-4">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-5" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-1">
+                            <div className="transform-rectangle_28">
                                 <div className="transform-1-0-0-1-0-1-0">
                                     <div className="transform-1-0-0-1-0-1-0-0">
                                         <div className="transform-1-0-0-1-0-1-0-0-0">
-                                            <div className="transform-text-2">Y</div>
+                                            <div className="transform-text-10">Y</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-8">
-                                        <div className="transform-1-0-0-1-0-1-0-1-0">
-                                            <div className="transform-text-13">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-4" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-8">
+                            <div className="transform-rectangle_28-1">
                                 <div className="transform-1-0-0-1-0-2-0">
                                     <div className="transform-1-0-0-1-0-2-0-0">
                                         <div className="transform-1-0-0-1-0-2-0-0-0">
-                                            <div className="transform-text-139">Z</div>
+                                            <div className="transform-text-7">Z</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-4">
-                                        <div className="transform-1-0-0-1-0-2-0-1-0">
-                                            <div className="transform-text-7">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-0" /> 
                                 </div>
                             </div>
                         </div>
@@ -79,55 +67,43 @@ function render() {
             </div>
         </div>
         <div className="transform-2">
-            <div className="transform-rectangle-17">
+            <div className="transform-rectangle-14">
                 <div className="transform-2-0-0">
                     <div className="transform-2-0-0-0">
                         <div className="transform-2-0-0-0-0">
-                            <div className="transform-text-6">Rotation</div>
+                            <div className="transform-text-89">Rotation</div>
                         </div>
                     </div>
-                    <div className="transform-rectangle_28-4">
+                    <div className="transform-rectangle_27-9">
                         <div className="transform-2-0-0-1-0">
-                            <div className="transform-rectangle_27-7">
+                            <div className="transform-rectangle_28-9">
                                 <div className="transform-2-0-0-1-0-0-0">
                                     <div className="transform-2-0-0-1-0-0-0-0">
                                         <div className="transform-2-0-0-1-0-0-0-0-0">
-                                            <div className="transform-text-87">X</div>
+                                            <div className="transform-text-6">X</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-41">
-                                        <div className="transform-2-0-0-1-0-0-0-1-0">
-                                            <div className="transform-text-84">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input_2" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-70">
+                            <div className="transform-rectangle_28-5">
                                 <div className="transform-2-0-0-1-0-1-0">
                                     <div className="transform-2-0-0-1-0-1-0-0">
                                         <div className="transform-2-0-0-1-0-1-0-0-0">
-                                            <div className="transform-text-40">Y</div>
+                                            <div className="transform-text-14">Y</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-6">
-                                        <div className="transform-2-0-0-1-0-1-0-1-0">
-                                            <div className="transform-text-48">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-1" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-0">
+                            <div className="transform-rectangle_28-93">
                                 <div className="transform-2-0-0-1-0-2-0">
                                     <div className="transform-2-0-0-1-0-2-0-0">
                                         <div className="transform-2-0-0-1-0-2-0-0-0">
-                                            <div className="transform-text-5">Z</div>
+                                            <div className="transform-text-79">Z</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-1">
-                                        <div className="transform-2-0-0-1-0-2-0-1-0">
-                                            <div className="transform-text-89">0</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-9" /> 
                                 </div>
                             </div>
                         </div>
@@ -136,55 +112,43 @@ function render() {
             </div>
         </div>
         <div className="transform-3">
-            <div className="transform-rectangle-9">
+            <div className="transform-rectangle-4">
                 <div className="transform-3-0-0">
                     <div className="transform-3-0-0-0">
                         <div className="transform-3-0-0-0-0">
-                            <div className="transform-text-44">Scale</div>
+                            <div className="transform-text-34">Scale</div>
                         </div>
                     </div>
-                    <div className="transform-rectangle_28-43">
+                    <div className="transform-rectangle_27-7">
                         <div className="transform-3-0-0-1-0">
-                            <div className="transform-rectangle_27-74">
+                            <div className="transform-rectangle_28-6">
                                 <div className="transform-3-0-0-1-0-0-0">
                                     <div className="transform-3-0-0-1-0-0-0-0">
                                         <div className="transform-3-0-0-1-0-0-0-0-0">
-                                            <div className="transform-text-16">X</div>
+                                            <div className="transform-text-5">X</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-0">
-                                        <div className="transform-3-0-0-1-0-0-0-1-0">
-                                            <div className="transform-text-50">1</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input_2-6" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-5">
+                            <div className="transform-rectangle_28-17">
                                 <div className="transform-3-0-0-1-0-1-0">
                                     <div className="transform-3-0-0-1-0-1-0-0">
                                         <div className="transform-3-0-0-1-0-1-0-0-0">
-                                            <div className="transform-text-61">Y</div>
+                                            <div className="transform-text-77">Y</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-42">
-                                        <div className="transform-3-0-0-1-0-1-0-1-0">
-                                            <div className="transform-text-56">1</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-45" /> 
                                 </div>
                             </div>
-                            <div className="transform-rectangle_27-19">
+                            <div className="transform-rectangle_28-3">
                                 <div className="transform-3-0-0-1-0-2-0">
                                     <div className="transform-3-0-0-1-0-2-0-0">
                                         <div className="transform-3-0-0-1-0-2-0-0-0">
-                                            <div className="transform-text-0">Z</div>
+                                            <div className="transform-text-88">Z</div>
                                         </div>
                                     </div>
-                                    <div className="transform-rectangle_2-3">
-                                        <div className="transform-3-0-0-1-0-2-0-1-0">
-                                            <div className="transform-text-33">1</div>
-                                        </div>
-                                    </div>
+                                    <input type="text" placeholder="0" className="transform-text_input-8" /> 
                                 </div>
                             </div>
                         </div>
