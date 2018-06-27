@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 116px;
+    padding-bottom: 55px;
     background: rgb(56, 56, 56);
 }
 
@@ -126,7 +126,8 @@
 .fileexplorer-0-0-1-0-0 {
     display: flex;
     padding-left: 5px;
-    padding-right: 1px;
+    padding-right: 10px;
+    justify-content: space-between;
 }
 
 .fileexplorer-rectangle_2 {
@@ -198,28 +199,34 @@
     background: linear-gradient(0deg, rgb(45, 45, 45), rgba(0, 0, 0, 0));
 }
 
-.fileexplorer-rectangle_2-3 {
+.fileexplorer-0-0-1-0-0-1 {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 0px;
-    min-height: fit-content;
-    margin-left: 92px;
     padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 10px;
-    background: rgb(47, 47, 47);
+    padding-bottom: 1px;
 }
 
 .fileexplorer-0-0-1-0-0-1-0 {
     display: flex;
+}
+
+.fileexplorer-rectangle_2-3 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+    border-radius: 10px;
+    background: rgb(63, 63, 63);
+}
+
+.fileexplorer-0-0-1-0-0-1-0-0-0 {
+    display: flex;
     padding-left: 4px;
-    padding-right: 11px;
+    padding-right: 2px;
 }
 
 .fileexplorer-text-9 {
-    flex-grow: 1;
-    flex-basis: 0px;
+    width: 64px;
+    flex-shrink: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(136, 136, 136);
     font-size: 8px;
@@ -241,6 +248,61 @@
     flex-grow: 1;
     flex-basis: 0px;
     background: rgb(31, 31, 31);
+}
+
+.fileexplorer-1 {
+    display: flex;
+}
+
+.fileexplorer-rectangle-0 {
+    height: 1px;
+    flex-grow: 1;
+    flex-basis: 0px;
+    background: rgb(31, 31, 31);
+}
+
+.fileexplorer-2 {
+    display: flex;
+}
+
+.fileexplorer-list_item_instance-6 {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+}
+
+.fileexplorer-3 {
+    display: flex;
+}
+
+.fileexplorer-list_item_instance-8 {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+}
+
+.fileexplorer-4 {
+    display: flex;
+}
+
+.fileexplorer-list_item_instance-0 {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+}
+
+.fileexplorer-5 {
+    display: flex;
+}
+
+.fileexplorer-list_item_instance-2 {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
 }
 
 * {

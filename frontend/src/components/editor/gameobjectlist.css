@@ -210,7 +210,7 @@
     display: flex;
 }
 
-.gameobjectlist-rectangle-8 {
+.gameobjectlist-rectangle-3 {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -224,12 +224,14 @@
 .gameobjectlist-1-0-1-0-0 {
     display: flex;
     padding-left: 5px;
-    padding-right: 1px;
+    padding-right: 10px;
+    justify-content: space-between;
 }
 
-.gameobjectlist-rectangle_2-0 {
+.gameobjectlist-rectangle_2-8 {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     background: rgba(47, 47, 47, 0);
 }
 
@@ -256,19 +258,10 @@
     display: flex;
 }
 
-.gameobjectlist-text-6 {
-    width: 26px;
+.gameobjectlist-text-5 {
     flex-shrink: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: rgb(136, 136, 136);
-    font-size: 8px;
-    line-height: 9px;
-    letter-spacing: 0px;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: none;
-    text-align: left;
-    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
 }
 
 .gameobjectlist-1-0-1-0-0-0-0-2 {
@@ -283,7 +276,7 @@
     display: flex;
 }
 
-.gameobjectlist-triangle-9 {
+.gameobjectlist-triangle-0 {
     width: 4px;
     flex-shrink: 0;
 }
@@ -304,28 +297,34 @@
     background: linear-gradient(0deg, rgb(45, 45, 45), rgba(0, 0, 0, 0));
 }
 
-.gameobjectlist-rectangle_2-3 {
+.gameobjectlist-1-0-1-0-0-1 {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 0px;
-    min-height: fit-content;
-    margin-left: 92px;
     padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 10px;
-    background: rgb(47, 47, 47);
+    padding-bottom: 1px;
 }
 
 .gameobjectlist-1-0-1-0-0-1-0 {
     display: flex;
-    padding-left: 4px;
-    padding-right: 11px;
 }
 
-.gameobjectlist-text-65 {
-    flex-grow: 1;
-    flex-basis: 0px;
+.gameobjectlist-rectangle_2-84 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+    border-radius: 10px;
+    background: rgb(63, 63, 63);
+}
+
+.gameobjectlist-1-0-1-0-0-1-0-0-0 {
+    display: flex;
+    padding-left: 4px;
+    padding-right: 2px;
+}
+
+.gameobjectlist-text-3 {
+    width: 64px;
+    flex-shrink: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(136, 136, 136);
     font-size: 8px;
@@ -342,7 +341,7 @@
     display: flex;
 }
 
-.gameobjectlist-rectangle-5 {
+.gameobjectlist-rectangle-2 {
     height: 1px;
     flex-grow: 1;
     flex-basis: 0px;

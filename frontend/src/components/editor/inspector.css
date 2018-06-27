@@ -215,7 +215,7 @@
     display: flex;
 }
 
-.inspector-rectangle-3 {
+.inspector-rectangle-5 {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -229,12 +229,14 @@
 .inspector-1-0-1-0-0 {
     display: flex;
     padding-left: 5px;
-    padding-right: 1px;
+    padding-right: 10px;
+    justify-content: space-between;
 }
 
-.inspector-rectangle_2-8 {
+.inspector-rectangle_2-4 {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     background: rgba(47, 47, 47, 0);
 }
 
@@ -262,18 +264,9 @@
 }
 
 .inspector-text-9 {
-    width: 26px;
     flex-shrink: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: rgb(136, 136, 136);
-    font-size: 8px;
-    line-height: 9px;
-    letter-spacing: 0px;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: none;
-    text-align: left;
-    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
 }
 
 .inspector-1-0-1-0-0-0-0-2 {
@@ -288,7 +281,7 @@
     display: flex;
 }
 
-.inspector-triangle-5 {
+.inspector-triangle-3 {
     width: 4px;
     flex-shrink: 0;
 }
@@ -309,28 +302,34 @@
     background: linear-gradient(0deg, rgb(45, 45, 45), rgba(0, 0, 0, 0));
 }
 
-.inspector-rectangle_2-6 {
+.inspector-1-0-1-0-0-1 {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 0px;
-    min-height: fit-content;
-    margin-left: 92px;
     padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 10px;
-    background: rgb(47, 47, 47);
+    padding-bottom: 1px;
 }
 
 .inspector-1-0-1-0-0-1-0 {
     display: flex;
-    padding-left: 4px;
-    padding-right: 11px;
 }
 
-.inspector-text-8 {
-    flex-grow: 1;
-    flex-basis: 0px;
+.inspector-rectangle_2-3 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+    border-radius: 10px;
+    background: rgb(63, 63, 63);
+}
+
+.inspector-1-0-1-0-0-1-0-0-0 {
+    display: flex;
+    padding-left: 4px;
+    padding-right: 2px;
+}
+
+.inspector-text-1 {
+    width: 64px;
+    flex-shrink: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: rgb(136, 136, 136);
     font-size: 8px;

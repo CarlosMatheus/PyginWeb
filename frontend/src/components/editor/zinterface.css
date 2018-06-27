@@ -47,16 +47,16 @@
 
 .zinterface-1 {
     display: flex;
-    margin-top: 134px;
-    padding-left: 503px;
-    padding-right: 367px;
+    margin-top: 30px;
+    padding-left: 17px;
+    padding-right: 1015px;
 }
 
 .zinterface-fileexplorer_instance-3 {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    min-width: 410px;
+    min-width: 248px;
 }
 
 .zinterface-2 {
