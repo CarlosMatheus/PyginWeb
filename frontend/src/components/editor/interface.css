@@ -11,6 +11,11 @@
     height: 100%;
 }
 
+.my-dropdown{
+    background-color: #37383D;
+    color: #D8D8D8;
+}
+
 .navbar-row{
     min-width: 100%;
 }

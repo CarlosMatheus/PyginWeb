@@ -42,7 +42,21 @@ function render() {
                                     <div className="fileexplorer-rectangle_1" /> 
                                     <div className="fileexplorer-0-0-1-0-0-0-0-1">
                                         <div className="fileexplorer-0-0-1-0-0-0-0-1-0">
-                                            <div className="fileexplorer-text-0">Create</div>
+                                            <div className="fileexplorer-text-0">
+                                                <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
+                                                                                                            aria-haspopup="true" aria-expanded="false">
+                                                                                                        Create
+                                                                                                    </div>
+                                                                                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                                                        <a className="dropdown-item" onClick={()=> {window.alert("test")}}>
+                                                
+                                                Action
+                                                
+                                                </a>
+                                                                                                        <a className="dropdown-item" href="#">Another action</a>
+                                                                                                        <a className="dropdown-item" href="#">Something else here</a>
+                                                                                                    </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="fileexplorer-0-0-1-0-0-0-0-2">

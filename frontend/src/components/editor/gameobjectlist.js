@@ -75,7 +75,17 @@ function render() {
                                     <div className="gameobjectlist-rectangle_1" /> 
                                     <div className="gameobjectlist-1-0-1-0-0-0-0-1">
                                         <div className="gameobjectlist-1-0-1-0-0-0-0-1-0">
-                                            <div className="gameobjectlist-text-6">Create</div>
+                                            <div className="dropdown">
+                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                        Create
+                                                    </div>
+                                                    <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
+                                                        <a className="dropdown-item" href="#">Action</a>
+                                                        <a className="dropdown-item" href="#">Another action</a>
+                                                        <a className="dropdown-item" href="#">Something else here</a>
+                                                    </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="gameobjectlist-1-0-1-0-0-0-0-2">
