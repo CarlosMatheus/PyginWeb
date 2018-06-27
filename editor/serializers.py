@@ -10,15 +10,14 @@ class ProjectSerializer(serializers.ModelSerializer):
             'user',
         )
 
-        model = models.Scene
+        model = models.Project
 
 
 class SceneSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
             'name',
-            'creation_date',
-            'user',
+            'project',
         )
 
         model = models.Scene
