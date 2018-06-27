@@ -30,7 +30,7 @@ function render() {
                                     </div>
                                     <div className="scene-1-0-0-0-0-0-0-1">
                                         <div className="scene-1-0-0-0-0-0-0-1-0">
-                                            <div className="scene-gameobjectlist-4">Scene</div>
+                                            <div className="scene-gameobjectlist-4">{this.props.current_scene.name}</div>
                                         </div>
                                     </div>
                                     <div className="scene-1-0-0-0-0-0-0-2">

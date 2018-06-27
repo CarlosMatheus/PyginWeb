@@ -57,7 +57,7 @@ function render() {
                                                         <a className="dropdown-item" href="#"
                                                         onClick={() => this.props.create_file('Controller')}>Controller</a>
                                                         <a className="dropdown-item" href="#"
-                                                        onClick={() => this.props.create_file('Scene')}>Scene</a>
+                                                        onClick={() => this.props.create_scene()}>Scene</a>
                                                         <a className="dropdown-item" href="#"
                                                         onClick={() => this.props.create_file('Animation')}>Animation</a>
                                                     </div>
@@ -116,6 +116,18 @@ function render() {
                     <div className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={file}/>
+                        </div>
+                    </div>
+                )
+            })
+        }
+        {
+            this.props.scenes.map((scene) => {
+                return (
+                    <div className="gameobjectlist-item"
+                         onClick={()=>this.props.change_scene(this.props.scenes.indexOf(scene))}>
+                        <div className="gameobjectlist-list_item_instance">
+                            <List_item name={scene.name}/>
                         </div>
                     </div>
                 )
