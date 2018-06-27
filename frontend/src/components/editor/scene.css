@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-bottom: 136px;
+    padding-bottom: 2px;
     background: rgb(56, 56, 56);
 }
 
@@ -188,6 +188,37 @@
     flex-grow: 1;
     flex-basis: 0px;
     background: rgb(31, 31, 31);
+}
+
+.scene-2 {
+    display: flex;
+    margin-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.scene-rectangle_26 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
+    padding-bottom: 1px;
+    background: rgb(84, 84, 84);
+}
+
+.scene-2-0-0 {
+    display: flex;
+    padding-right: 1px;
+}
+
+.scene-image_4 {
+    height: 131px;
+    flex-grow: 1;
+    flex-basis: 0px;
+    background-image: url('https://ucarecdn.com/9a2188c2-5ad2-4f11-816d-d91afb1ee383/');
+    background-size: cover;
+    background-position: center;
 }
 
 * {

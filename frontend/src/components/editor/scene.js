@@ -55,6 +55,13 @@ function render() {
                 </div>
             </div>
         </div>
+        <div className="scene-2">
+            <div className="scene-rectangle_26">
+                <div className="scene-2-0-0">
+                    <div className="scene-image_4" /> 
+                </div>
+            </div>
+        </div>
     </div>;
 };
 
