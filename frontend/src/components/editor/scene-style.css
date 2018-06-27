@@ -12,3 +12,9 @@
     text-align: center;
     word-wrap: break-word;
 }
+
+.scene-image_4{
+    height: auto;
+    background-size: auto;
+    background-repeat: repeat;
+}

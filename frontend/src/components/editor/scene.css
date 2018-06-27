@@ -120,18 +120,9 @@
 }
 
 .scene-gameobjectlist-4 {
-    width: 130px;
     flex-shrink: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: rgb(136, 136, 136);
-    font-size: 11px;
-    line-height: 13px;
-    letter-spacing: 0px;
-    font-weight: normal;
-    font-style: normal;
-    text-decoration: none;
-    text-align: center;
-    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
 }
 
 .scene-1-0-0-0-0-0-0-2 {
@@ -192,6 +183,9 @@
 
 .scene-2 {
     display: flex;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
     margin-top: 2px;
     padding-left: 2px;
     padding-right: 2px;
@@ -209,16 +203,20 @@
 
 .scene-2-0-0 {
     display: flex;
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-height: fit-content;
     padding-right: 1px;
 }
 
 .scene-image_4 {
-    height: 131px;
     flex-grow: 1;
     flex-basis: 0px;
     background-image: url('https://ucarecdn.com/9a2188c2-5ad2-4f11-816d-d91afb1ee383/');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    height: 131px;
 }
 
 * {
