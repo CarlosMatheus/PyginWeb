@@ -12,7 +12,8 @@ class Editor extends React.Component {
         super(props);
         this.state = {
             game_objects: [],
-            game_object_count: {'Rectangle': 0, 'Circle':0, 'Polygon':0, 'Sprite':0, 'Text':0}
+            game_object_count: {'Rectangle': 0, 'Circle':0, 'Polygon':0, 'Sprite':0, 'Text':0,
+                                'Generic' : 0}
         }
     }
 
@@ -42,7 +43,9 @@ class Editor extends React.Component {
                                         />
                                     </div>
                                     <div className="main-component-half-2">
-                                        <Fileexplorer/>
+                                        <Fileexplorer game_objects={this.state.game_objects}
+                                                      create_game_object={(name)=>this.createGameObject(name)}
+                                        />
                                     </div>
                                 </div>
                                 <div className="col-6">

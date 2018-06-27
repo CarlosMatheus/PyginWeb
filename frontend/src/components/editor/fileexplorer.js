@@ -15,7 +15,7 @@ function render() {
                                 <div className="fileexplorer-0-0-0-0-0-0-0">
                                     <div className="fileexplorer-0-0-0-0-0-0-0-0">
                                         <div className="fileexplorer-0-0-0-0-0-0-0-0-0">
-                                            <div className="fileexplorer-rectangle_4" /> 
+                                            <div className="fileexplorer-rectangle_4"/>
                                         </div>
                                     </div>
                                     <div className="fileexplorer-0-0-0-0-0-0-0-1">
@@ -27,7 +27,7 @@ function render() {
                                     </div>
                                     <div className="fileexplorer-0-0-0-0-0-0-0-2">
                                         <div className="fileexplorer-0-0-0-0-0-0-0-2-0">
-                                            <div className="fileexplorer-rectangle_4-7" /> 
+                                            <div className="fileexplorer-rectangle_4-7"/>
                                         </div>
                                     </div>
                                 </div>
@@ -40,37 +40,40 @@ function render() {
                         <div className="fileexplorer-0-0-1-0-0">
                             <div className="fileexplorer-rectangle_2">
                                 <div className="fileexplorer-0-0-1-0-0-0-0">
-                                    <div className="fileexplorer-rectangle_1" /> 
+                                    <div className="fileexplorer-rectangle_1"/>
                                     <div className="fileexplorer-0-0-1-0-0-0-0-1">
                                         <div className="fileexplorer-0-0-1-0-0-0-0-1-0">
                                             <div className="fileexplorer-text-0">
                                                 <div className="dropdown">
-                                                                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
-                                                                                                            aria-haspopup="true" aria-expanded="false">
-                                                                                                        Create
-                                                                                                    </div>
-                                                                                                    <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
-                                                                                                        <a className="dropdown-item" href="#">GameObject</a>
-                                                                                                        <a className="dropdown-item" href="#">Controller</a>
-                                                
-                                                <a className="dropdown-item" href="#">Scene</a>
-                                                
-                                                <a className="dropdown-item" href="#">Animation</a>
-                                                                                                    </div>
-                                                                                            </div>
+                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton"
+                                                         data-toggle="dropdown"
+                                                         aria-haspopup="true" aria-expanded="false">
+                                                        Create
+                                                    </div>
+                                                    <div className="dropdown-menu my-dropdown"
+                                                         aria-labelledby="dropdownMenuButton">
+                                                        <a className="dropdown-item" href="#"
+                                                        onClick={() => this.props.create_game_object('Generic')}>GameObject</a>
+                                                        <a className="dropdown-item" href="#">Controller</a>
+                                                        <a className="dropdown-item" href="#">Scene</a>
+                                                        <a className="dropdown-item" href="#">Animation</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="fileexplorer-0-0-1-0-0-0-0-2">
                                         <div className="fileexplorer-0-0-1-0-0-0-0-2-0">
                                             <div className="fileexplorer-triangle-4">
-                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4" className="fileexplorer-0-0-1-0-0-0-0-2-0-0-0">
-                                                    <polygon points="0 4 4 0 4 4" className="fileexplorer-0-0-1-0-0-0-0-2-0-0-0-0" /> 
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"
+                                                     className="fileexplorer-0-0-1-0-0-0-0-2-0-0-0">
+                                                    <polygon points="0 4 4 0 4 4"
+                                                             className="fileexplorer-0-0-1-0-0-0-0-2-0-0-0-0"/>
                                                 </svg>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="fileexplorer-rectangle_12" /> 
+                                    <div className="fileexplorer-rectangle_12"/>
                                 </div>
                             </div>
                             <div className="fileexplorer-0-0-1-0-0-1">
@@ -86,41 +89,27 @@ function render() {
                     </div>
                 </div>
                 <div className="fileexplorer-0-0-2">
-                    <div className="fileexplorer-rectangle-58" /> 
+                    <div className="fileexplorer-rectangle-58"/>
                 </div>
             </div>
         </div>
         <div className="fileexplorer-1">
-            <div className="fileexplorer-rectangle-0" /> 
+            <div className="fileexplorer-rectangle-0"/>
         </div>
-        <div className="fileexplorer-2">
-            <div className="fileexplorer-list_item_instance-6">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="fileexplorer-3">
-            <div className="fileexplorer-list_item_instance-8">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="fileexplorer-4">
-            <div className="fileexplorer-list_item_instance-0">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="fileexplorer-5">
-            <div className="fileexplorer-list_item_instance-2">
-                <List_item name={""} /> 
-            </div>
-        </div>
-        <div className="fileexplorer-6">
-            <div className="fileexplorer-list_item_instance-4">
-                <List_item name={""} /> 
-            </div>
-        </div>
+        {
+            this.props.game_objects.map((game_object) => {
+                return (
+                    <div className="gameobjectlist-item">
+                        <div className="gameobjectlist-list_item_instance">
+                            <List_item name={'GameObject_' + game_object}/>
+                        </div>
+                    </div>
+                )
+            })
+        }
     </div>;
 };
 
-export default function(props) {
+export default function (props) {
     return render.apply({props: props});
 }
