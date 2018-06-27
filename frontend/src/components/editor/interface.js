@@ -7,19 +7,23 @@ import Inspector from './inspector';
 import './interface.css';
 import ProjectSelector from './project_selector'
 import GameObject from './engine_classes/game_object'
+import SceneGame from './engine_classes/scene'
 
 class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            project: 'No Project Selected',
             game_objects: [],
+            selected_scene: 0,
+            scenes: [new SceneGame('Scene_1')],
             game_object_count: {
                 'Rectangle': 0, 'Circle': 0, 'Polygon': 0, 'Sprite': 0, 'Text': 0,
                 'Generic': 0
             },
-            files: ['Scene_1'],
+            files: [],
             file_count: {
-                'Controller': 0, 'Scene': 1, 'Animation': 0
+                'Controller': 0, 'Animation': 0
             }
         }
     }
@@ -46,6 +50,20 @@ class Editor extends React.Component {
         });
     }
 
+    createScene() {
+        const scenes = this.state.scenes;
+        scenes.push(new SceneGame("Scene_" + (scenes.length+1)));
+        this.setState({
+            scenes: scenes
+        });
+    }
+
+    changeScene(index){
+        this.setState({
+            selected_scene: index,
+        })
+    }
+
     render() {
         return (
             <div className="main-body">
@@ -65,12 +83,15 @@ class Editor extends React.Component {
                                                       create_game_object={(name) => this.createGameObject(name)}
                                                       files={this.state.files}
                                                       create_file={(name) => this.createFile(name)}
+                                                      scenes={this.state.scenes}
+                                                      create_scene={(name) => this.createScene(name)}
+                                                      change_scene={(index)=> this.changeScene(index)}
                                         />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="main-component">
-                                        <Scene/>
+                                        <Scene current_scene={this.state.scenes[this.state.selected_scene]}/>
                                     </div>
                                 </div>
                                 <div className="col">
