@@ -15,6 +15,7 @@ class Editor extends React.Component {
         this.state = {
             selectorIsOpen: true,
             project: 'New Project',
+            project_id: 0,
             game_objects: [],
             selected_scene: 0,
             scenes: [new SceneGame('Scene_1')],
@@ -35,9 +36,10 @@ class Editor extends React.Component {
         else document.title = this.state.project;
     }
 
-    changeCurrentProject(newProj) {
+    changeCurrentProject(newProj, projId) {
         this.setState({
-            project: newProj
+            project: newProj,
+            project_id: projId
         })
 //        console.log(newProj);
     }
@@ -98,7 +100,7 @@ class Editor extends React.Component {
                     <ProjectSelector
                         open={this.state.selectorIsOpen}
                         onClose={() => this.closeSelector()}
-                        changeCurrentProject={(newProj) => this.changeCurrentProject(newProj)}
+                        changeCurrentProject={(newProj, projId) => this.changeCurrentProject(newProj, projId)}
                     />
                     <div className="row">
                         <div className="interface-interface-5">

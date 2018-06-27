@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Project(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200)
     creation_date = models.DateTimeField('date published')
     user = models.ForeignKey(User, on_delete=models.CASCADE)

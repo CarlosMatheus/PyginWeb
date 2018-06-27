@@ -5,6 +5,7 @@ from editor import models
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
+            'id',
             'name',
             'creation_date',
             'user',
