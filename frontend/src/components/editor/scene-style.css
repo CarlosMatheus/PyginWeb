@@ -13,8 +13,14 @@
     word-wrap: break-word;
 }
 
+.scene-rectangle_26{
+    background: #1E1E1E;
+}
+
 .scene-image_4{
     height: auto;
     background-size: auto;
     background-repeat: repeat;
+    opacity: 0.3;
+    background-position: initial;
 }
