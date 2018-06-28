@@ -19,11 +19,10 @@ class Editor extends React.Component {
             project: 'New Project',
             isNewProj: true,
             project_id: 0,
-            scenes: [new SceneGame('Scene_1')],
+            scenes: [],
             selected_scene: 0,
-            game_object_list: [],
             selected_game_object: -1,
-            files: [new File('Scene_1', 'Scene')],
+            files: [],
             selected_file: 0,
             file_count: {
                 'Controller': 0, 'Animation': 0
@@ -58,7 +57,6 @@ class Editor extends React.Component {
                 selectorIsOpen: false,
                 scenes: [],
                 selected_scene: 0,
-                game_object_list: [],
                 selected_game_object: -1,
                 files: [],
                 selected_file: -1,
@@ -88,24 +86,18 @@ class Editor extends React.Component {
         var object_name = name + "_" + scene.game_object_count[name];
         scene.game_object_count[name]++;
         scene.game_objects.push(new GameObject(object_name));
-
-        const game_object_list = this.state.game_object_list;
-        game_object_list.push(scene.game_objects[scene.game_objects.length - 1]);
-        this.updateGameObjectSelection(game_object_list.length - 1);
+        this.updateGameObjectSelection(scene.game_objects.length - 1);
         this.createFile(object_name, true);
-        this.setState({
-            game_object_list: game_object_list,
-        });
     }
 
     createFile(name, type = name, isTrueName = false) {
         const files = this.state.files;
         const file_count = this.state.file_count;
         if (isTrueName)
-            files.push(name);
+            files.push(new File(name));
         else {
             file_count[name]++;
-            files.push(name + "_" + file_count[name]);
+            files.push(new File(name + "_" + file_count[name]));
         }
         this.updateFileSelection(files.length - 1);
         this.setState({
@@ -117,8 +109,6 @@ class Editor extends React.Component {
     createScene() {
         const scenes = this.state.scenes;
         let scene_name = "Scene_" + (scenes.length + 1);
-        scenes.push(new SceneGame(scene_name));
-        this.createFile(scene_name, 'Scene', true);
 
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -127,21 +117,19 @@ class Editor extends React.Component {
             {
                 "name": scene_name,
                 "project": this.state.project_id,
-            });
-        this.updateScenes();
+            }).then(()=>this.updateScenes())
     }
 
     updateScenes() {
         axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
             .then(response => {
+                    //TODO delete all scenes and re add tem here
                     this.setState({
-                        scenes: response.data.map((scene) => new SceneGame(scene.name)),
+                        scenes: response.data.map((scene) => new SceneGame(scene.name, scene.id)),
                         selectorIsOpen: false,
                         selected_scene: 0,
-                        //scenes: ['ola', 'ola2'],
-                        game_object_list: [],
                         selected_game_object: -1,
-                        files: response.data.map((scene) => scene.name),
+                        files: response.data.map((scene) => new File(scene.name, "Scene")),
                         selected_file: 0,
                         file_count: {
                             'Controller': 0, 'Animation': 0
@@ -172,9 +160,10 @@ class Editor extends React.Component {
                             <div className="interface-0">
                                 <div className="col">
                                     <div className="main-component-half-1">
-                                        <Gameobjectlist game_objects={this.state.game_object_list}
+                                        <Gameobjectlist game_objects={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene].game_objects : []}
                                                         create_game_object={(name) => this.createGameObject(name)}
                                                         handleClick={() => this.openSelector()}
+                                                        updateGameObjectSelection={(index) => this.updateGameObjectSelection(index)}
                                         />
                                     </div>
                                     <div className="main-component-half-2">
