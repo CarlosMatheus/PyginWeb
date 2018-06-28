@@ -19,11 +19,11 @@ class Editor extends React.Component {
             project: 'New Project',
             isNewProj: true,
             project_id: 0,
-            scenes: [new SceneGame('Scene_1')],
+            scenes: [],
             selected_scene: 0,
             game_object_list: [],
             selected_game_object: -1,
-            files: [new File('Scene_1', 'Scene')],
+            files: [],
             selected_file: 0,
             file_count: {
                 'Controller': 0, 'Animation': 0
@@ -117,8 +117,6 @@ class Editor extends React.Component {
     createScene() {
         const scenes = this.state.scenes;
         let scene_name = "Scene_" + (scenes.length + 1);
-        scenes.push(new SceneGame(scene_name));
-        this.createFile(scene_name, 'Scene', true);
 
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -127,21 +125,20 @@ class Editor extends React.Component {
             {
                 "name": scene_name,
                 "project": this.state.project_id,
-            });
-        this.updateScenes();
+            }).then(()=>this.updateScenes())
     }
 
     updateScenes() {
         axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
             .then(response => {
+                    //TODO delete all scenes and re add tem here
                     this.setState({
-                        scenes: response.data.map((scene) => new SceneGame(scene.name)),
+                        scenes: response.data.map((scene) => new SceneGame(scene.name, scene.id)),
                         selectorIsOpen: false,
                         selected_scene: 0,
-                        //scenes: ['ola', 'ola2'],
                         game_object_list: [],
                         selected_game_object: -1,
-                        files: response.data.map((scene) => scene.name),
+                        files: response.data.map((scene) => new File(scene.name, "Scene")),
                         selected_file: 0,
                         file_count: {
                             'Controller': 0, 'Animation': 0

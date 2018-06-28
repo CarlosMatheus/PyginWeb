@@ -1,5 +1,6 @@
 class SceneGame {
-    constructor(name) {
+    constructor(name, id) {
+        this.id = id;
         this.name = name;
         this.game_objects = [];
         this.game_object_count = {
