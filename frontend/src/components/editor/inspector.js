@@ -23,7 +23,7 @@ function render() {
                             </div>
                             <div className="inspector-rectangle_4-5">
                                 <div className="inspector-0-0-0-1-0-1-0">
-                                    <a href="/home/" className="inspector-0-0-0-1-0-1-0-0">
+                                    <a href="/login/" className="inspector-0-0-0-1-0-1-0-0">
                                         <div className="inspector-gameobjectlist-8">Account</div>
                                     </a>
                                 </div>
