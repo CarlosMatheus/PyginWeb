@@ -5,6 +5,7 @@ from .serializers import *
 from django.http import HttpResponse
 import datetime
 import os
+from editor.models import Project
 
 """Views for project"""
 
@@ -108,3 +109,37 @@ def Download(request):
     response = HttpResponse(FilePointer, content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename=GameFiles.zip'
     return response
+
+def generate_files(project_id):
+    project = Project.objects.get(id=0)
+    scenes = project.scene_set.all()
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    download = os.path.join(BASE_DIR, 'download')
+    subdirectories = os.path.join(download, 'subdirectories')
+
+    animations = os.path.join(subdirectories, 'animations')
+    if not os.path.exists(animations):
+        os.makedirs(animations)
+
+    assets = os.path.join(subdirectories, 'assets')
+    if not os.path.exists(assets):
+        os.makedirs(assets)
+
+    game_objects = os.path.join(subdirectories, 'game_objects')
+    if not os.path.exists(game_objects):
+        os.makedirs(game_objects)
+
+    scenes = os.path.join(subdirectories, 'scenes')
+    if not os.path.exists(scenes):
+        os.makedirs(scenes)
+
+    scripts = os.path.join(subdirectories, 'scripts')
+    if not os.path.exists(scripts):
+        os.makedirs(scripts)
+
+
+
+
+
