@@ -54,17 +54,16 @@ class Editor extends React.Component {
             this.setState({
                 isNewProj: false,
                 selectorIsOpen: false,
-                scenes: [],
+                scenes: [new SceneGame('Scene_1')],
                 selected_scene: 0,
                 game_object_list: [],
                 selected_game_object: -1,
-                files: [],
+                files: ['Scene_1'],
                 selected_file: -1,
                 file_count: {
                     'Controller': 0, 'Animation': 0
                 }
             })
-            this.createScene();
         } else {
             // TODO: load info
             this.setState({
@@ -150,7 +149,7 @@ class Editor extends React.Component {
                     <ProjectSelector
                         open={this.state.selectorIsOpen}
                         onClose={() => this.closeSelector()}
-                        changeCurrentProject={() => this.changeCurrentProject}
+                        changeCurrentProject={(newProj, projId, isNewProj) => this.changeCurrentProject(newProj, projId, isNewProj)}
                     />
                     <div className="row">
                         <div className="interface-interface-5">

@@ -118,7 +118,7 @@ class ProjectSelector extends React.Component {
                     }
                     <CreateProject
                         onClose={() => this.props.onClose()}
-                        changeCurrentProject={() => this.props.changeCurrentProject}
+                        changeCurrentProject={(newProj, projId, isNewProj) => this.props.changeCurrentProject(newProj, projId, isNewProj)}
                         updateList={() => this.getList()}
                         getIndex={()=>this.getNextIndex()}
                     />
