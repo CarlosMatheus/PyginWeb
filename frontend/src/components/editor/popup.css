@@ -108,6 +108,11 @@
     background: rgba(216, 216, 216, 0);
 }
 
+.popup-rectangle_36:hover {
+    background: rgba(216, 216, 216, 0.3);
+}
+
+
 .popup-1-1-0-0-0 {
     display: flex;
     padding-left: 5px;
@@ -149,6 +154,10 @@
     border-radius: 4px;
     cursor: pointer;
     background: rgba(216, 216, 216, 0);
+}
+
+.popup-rectangle_30:hover {
+    background: rgba(216, 216, 216, 0.3);
 }
 
 .popup-1-1-0-1-0-0-0 {
@@ -435,6 +444,10 @@
     border-radius: 4px;
     cursor: pointer;
     background: rgb(154, 154, 154);
+}
+
+.popup-rectangle_32:hover {
+    background: rgb(180, 180, 180);
 }
 
 .popup-4-0-0-1-0-1-0-0-0 {
