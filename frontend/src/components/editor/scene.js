@@ -31,7 +31,7 @@ function render() {
                                     <div className="scene-1-0-0-0-0-0-0-1">
                                         <div className="scene-1-0-0-0-0-0-0-1-0">
                                             <div className="scene-gameobjectlist-4">
-                                                {this.props.current_scene.name}
+                                                {this.props.current_scene != null ? this.props.current_scene.name : "No Scene"}
                                             </div>
                                         </div>
                                     </div>

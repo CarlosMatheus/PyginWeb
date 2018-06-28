@@ -101,10 +101,23 @@ function render() {
         </div>
         {
             this.props.files.map((file) => {
+                if (file.type != 'Scene')
+                    return (
+                        <div key={file.name} className="gameobjectlist-item">
+                            <div className="gameobjectlist-list_item_instance">
+                                <List_item name={file.name}/>
+                            </div>
+                        </div>
+                    )
+            })
+        }
+        {
+            this.props.scenes.map((scene) => {
                 return (
-                    <div key={file} className="gameobjectlist-item">
+                    <div key={scene} className="gameobjectlist-item"
+                         onClick={()=>this.props.change_scene(this.props.scenes.indexOf(scene))}>
                         <div className="gameobjectlist-list_item_instance">
-                            <List_item name={file}/>
+                            <List_item name={scene.name}/>
                         </div>
                     </div>
                 )

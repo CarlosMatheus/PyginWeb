@@ -11,14 +11,14 @@ function Project(props) {
             <div className="popup-1-0" />
             <div className="popup-rectangle_31">
                 <div className="popup-1-1-0">
-                    <div className="popup-rectangle_36" onClick={() => window.alert("not implemente yet")}>
+                    <div className="popup-rectangle_36" onClick={() => {props.onClickSelect(props.name, props.id);}}>
                         <div className="popup-1-1-0-0-0">
                             <div className="popup-text_2-3">{props.name}</div>
                         </div>
                     </div>
                     <div className="popup-1-1-0-1">
                         <div className="popup-1-1-0-1-0">
-                            <div className="popup-rectangle_30" onClick={() => props.onClickSelect()}>
+                            <div className="popup-rectangle_30" onClick={() => props.onClickDelete()}>
                                 <div className="popup-1-1-0-1-0-0-0">
                                     <div className="popup-image_5" />
                                 </div>
@@ -29,20 +29,6 @@ function Project(props) {
             </div>
             <div className="popup-1-2" />
         </div>
-        // <div className="container">
-        //     <div className="row">
-        //         <div className="">
-        //             <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => window.alert("not implemente yet")} >{props.name}</button>
-        //             {/*<a onClick={() => window.alert("not implemente yet")} >{props.name}</a>*/}
-        //         </div>
-        //         <div className="">
-        //             <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => props.onClickSelect()}>Delete</button>
-        //             {/*<button onClick={() => props.onClickSelect()}>*/}
-        //             {/*Delete*/}
-        //             {/*</button>*/}
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 
@@ -102,46 +88,6 @@ class CreateProject extends React.Component {
                     </div>
                 </div>
             </div>
-
-            // <div className="container">
-            //     <div className="row">
-            //         <div className="col-12">
-            //             <div className="input-group mb-3">
-            //                 <input type="text" className="form-control" placeholder="New project's name"
-            //                        aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(evt) => {
-            //                     this.state.projectName = evt.target.value
-            //                 }}>{}</input>
-            //                     <div className="input-group-append">
-            //                         <button className="btn btn-outline-secondary" type="button" onClick={() => {
-            //                             this.createProject(this.state.projectName);
-            //                             this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
-            //                             this.props.onClose();
-            //                             this.props.updateList();
-            //                         }}>
-            //                             Add Project
-            //                         </button>
-            //                     </div>
-            //             </div>
-            //         </div>
-
-
-                    // {/*<div className="col-8">*/}
-                    //     {/*<input type="text" onChange={(evt) => {*/}
-                    //         {/*this.state.projectName = evt.target.value*/}
-                    //     {/*}}>{}</input>*/}
-                    // {/*</div>*/}
-                    // {/*<div className="col-4">*/}
-                    //     {/*<button onClick={() => {*/}
-                    //         {/*this.createProject(this.state.projectName);*/}
-                    //         {/*this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);*/}
-                    //         {/*this.props.onClose();*/}
-                    //         {/*this.props.updateList();*/}
-                    //     {/*}}>*/}
-                    //         {/*Add Project*/}
-                    //     {/*</button>*/}
-                    // {/*</div>*/}
-            //     </div>
-            // </div>
         )
     }
 }
@@ -211,45 +157,21 @@ class ProjectSelector extends React.Component {
                         this.state.indexes.map((item) => {
                             return (
                                 <Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}
-                                         onClickSelect={() => this.deleteProject(item)}
+                                         id = {item}
+                                         onClickDelete={() => this.deleteProject(item)}
+                                         onClickSelect={(name, id) => {this.props.changeCurrentProject(name, id);
+                                         this.props.onClose();
+                                         }}
                                 />
                             )
                         })
                     }
                     <CreateProject
                         onClose={() => this.props.onClose()}
-                        changeCurrentProject={() => this.props.changeCurrentProject}
+                        changeCurrentProject={(newProj, projId, isNewProj) => this.props.changeCurrentProject(newProj, projId, isNewProj)}
                         updateList={() => this.getList()}
                         getIndex={()=>this.getNextIndex()}
                     />
-
-
-                {/*<div className="popup-style">*/}
-                    {/*<div className="container">*/}
-                        {/*<div className="row">*/}
-                            {/*<div className="col-2"></div>*/}
-                            {/*<div className="col-8">*/}
-                                {/*{*/}
-                                    {/*this.state.indexes.map((item) => {*/}
-                                        {/*return (*/}
-                                            {/*<Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}*/}
-                                                     {/*onClickSelect={() => this.deleteProject(item)}*/}
-                                            {/*/>*/}
-                                        {/*)*/}
-                                    {/*})*/}
-                                {/*}*/}
-                                {/*<CreateProject*/}
-                                    {/*onClose={() => this.props.onClose()}*/}
-                                    {/*changeCurrentProject={() => this.props.changeCurrentProject}*/}
-                                    {/*updateList={() => this.getList()}*/}
-                                    {/*getIndex={()=>this.getNextIndex()}*/}
-                                {/*/>*/}
-                            {/*</div>*/}
-                            {/*<div className="col-2"></div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-
                 </div>
             </ Popup>
         )

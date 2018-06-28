@@ -8,6 +8,8 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 import GameObject from './engine_classes/game_object'
 import SceneGame from './engine_classes/scene'
+import axios from 'axios'
+import File from './engine_classes/file'
 
 class Editor extends React.Component {
     constructor(props) {
@@ -21,7 +23,7 @@ class Editor extends React.Component {
             selected_scene: 0,
             game_object_list: [],
             selected_game_object: -1,
-            files: ['Scene_1'],
+            files: [new File('Scene_1', 'Scene')],
             selected_file: 0,
             file_count: {
                 'Controller': 0, 'Animation': 0
@@ -35,7 +37,7 @@ class Editor extends React.Component {
         else document.title = this.state.project;
     }
 
-    changeCurrentProject(newProj, projId, isNewProj=false) {
+    changeCurrentProject(newProj, projId, isNewProj = false) {
         this.setState({
             project: newProj,
             project_id: projId,
@@ -64,21 +66,8 @@ class Editor extends React.Component {
                     'Controller': 0, 'Animation': 0
                 }
             })
-            this.createScene();
         } else {
-            // TODO: load info
-            this.setState({
-                selectorIsOpen: false,
-                scenes: [new SceneGame('Scene_1')],
-                selected_scene: 0,
-                game_object_list: [],
-                selected_game_object: -1,
-                files: ['Scene_1'],
-                selected_file: 0,
-                file_count: {
-                    'Controller': 0, 'Animation': 0
-                }
-            })
+            this.updateScenes();
         }
     }
 
@@ -109,7 +98,7 @@ class Editor extends React.Component {
         });
     }
 
-    createFile(name, isTrueName=false) {
+    createFile(name, type = name, isTrueName = false) {
         const files = this.state.files;
         const file_count = this.state.file_count;
         if (isTrueName)
@@ -127,16 +116,42 @@ class Editor extends React.Component {
 
     createScene() {
         const scenes = this.state.scenes;
-        var scene_name = "Scene_" + (scenes.length+1);
+        let scene_name = "Scene_" + (scenes.length + 1);
         scenes.push(new SceneGame(scene_name));
-        this.createFile(scene_name, true);
-        this.setState({
-            scenes: scenes,
-            selected_scene: scenes.length-1
-        });
+        this.createFile(scene_name, 'Scene', true);
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.post(
+            "http://127.0.0.1:8000/api/scenes/",
+            {
+                "name": scene_name,
+                "project": this.state.project_id,
+            });
+        this.updateScenes();
     }
 
-    changeScene(index){
+    updateScenes() {
+        axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
+            .then(response => {
+                    this.setState({
+                        scenes: response.data.map((scene) => new SceneGame(scene.name)),
+                        selectorIsOpen: false,
+                        selected_scene: 0,
+                        //scenes: ['ola', 'ola2'],
+                        game_object_list: [],
+                        selected_game_object: -1,
+                        files: response.data.map((scene) => scene.name),
+                        selected_file: 0,
+                        file_count: {
+                            'Controller': 0, 'Animation': 0
+                        }
+                    });
+                }
+            );
+    }
+
+    changeScene(index) {
         this.setState({
             selected_scene: index,
         })
@@ -150,7 +165,7 @@ class Editor extends React.Component {
                     <ProjectSelector
                         open={this.state.selectorIsOpen}
                         onClose={() => this.closeSelector()}
-                        changeCurrentProject={() => this.changeCurrentProject}
+                        changeCurrentProject={(newProj, projId, isNewProj) => this.changeCurrentProject(newProj, projId, isNewProj)}
                     />
                     <div className="row">
                         <div className="interface-interface-5">
@@ -168,13 +183,13 @@ class Editor extends React.Component {
                                                       create_file={(name) => this.createFile(name)}
                                                       scenes={this.state.scenes}
                                                       create_scene={(name) => this.createScene(name)}
-                                                      change_scene={(index)=> this.changeScene(index)}
+                                                      change_scene={(index) => this.changeScene(index)}
                                         />
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="main-component">
-                                        <Scene current_scene={this.state.scenes[this.state.selected_scene]}/>
+                                        <Scene current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
                                     </div>
                                 </div>
                                 <div className="col">
