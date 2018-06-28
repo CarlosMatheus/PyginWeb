@@ -100,6 +100,18 @@ function render() {
             <div className="fileexplorer-rectangle-0"/>
         </div>
         {
+            this.props.scenes.map((scene) => {
+                return (
+                    <div key={scene.name} className="gameobjectlist-item"
+                         onClick={()=>this.props.change_scene(this.props.scenes.indexOf(scene))}>
+                        <div className="gameobjectlist-list_item_instance">
+                            <List_item name={scene.name}/>
+                        </div>
+                    </div>
+                )
+            })
+        }
+        {
             this.props.files.map((file) => {
                 if (file.type != 'Scene')
                     return (
@@ -109,18 +121,6 @@ function render() {
                             </div>
                         </div>
                     )
-            })
-        }
-        {
-            this.props.scenes.map((scene) => {
-                return (
-                    <div key={scene} className="gameobjectlist-item"
-                         onClick={()=>this.props.change_scene(this.props.scenes.indexOf(scene))}>
-                        <div className="gameobjectlist-list_item_instance">
-                            <List_item name={scene.name}/>
-                        </div>
-                    </div>
-                )
             })
         }
     </div>;
