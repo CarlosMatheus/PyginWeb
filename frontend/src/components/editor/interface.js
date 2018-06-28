@@ -84,10 +84,18 @@ class Editor extends React.Component {
     createGameObject(name) {
         var scene = this.state.scenes[this.state.selected_scene];
         var object_name = name + "_" + scene.game_object_count[name];
-        scene.game_object_count[name]++;
-        scene.game_objects.push(new GameObject(object_name));
         this.updateGameObjectSelection(scene.game_objects.length - 1);
         this.createFile(object_name, true);
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.post(
+            "http://127.0.0.1:8000/api/gameobjects/",
+            {
+                "name": object_name,
+                "type" : object_name,
+                "scene": scene.id,
+            }).then(() => this.changeScene(this.state.selected_scene))
     }
 
     createFile(name, type = name, isTrueName = false) {
@@ -117,7 +125,7 @@ class Editor extends React.Component {
             {
                 "name": scene_name,
                 "project": this.state.project_id,
-            }).then(()=>this.updateScenes())
+            }).then(() => this.updateScenes())
     }
 
     updateScenes() {
@@ -136,13 +144,22 @@ class Editor extends React.Component {
                         }
                     });
                 }
-            );
+            ).then(()=>this.updateGameObjects(this.state.scenes[this.state.selected_scene]));
     }
 
     changeScene(index) {
         this.setState({
             selected_scene: index,
-        })
+        });
+        this.updateGameObjects(this.state.scenes[index]);
+    }
+
+    updateGameObjects(scene) {
+        axios.get('http://127.0.0.1:8000/api/gameobjects/' + scene.id + '/')
+            .then(response => {
+                    scene.game_objects = response.data.map((gameobject) => new GameObject(gameobject.name));
+                }
+            ).then(()=>this.setState(this.state));
     }
 
     render() {
@@ -178,7 +195,8 @@ class Editor extends React.Component {
                                 </div>
                                 <div className="col-6">
                                     <div className="main-component">
-                                        <Scene current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
+                                        <Scene
+                                            current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
                                     </div>
                                 </div>
                                 <div className="col">
