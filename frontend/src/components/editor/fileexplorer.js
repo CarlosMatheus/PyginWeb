@@ -111,19 +111,20 @@ function render() {
                 )
             })
         }
-        {
-            this.props.files.map((file) => {
-                if (file.type != 'Scene')
-                    return (
-                        <div key={file.name} className="gameobjectlist-item">
-                            <div className="gameobjectlist-list_item_instance">
-                                <List_item name={file.name}/>
-                            </div>
-                        </div>
-                    )
-            })
-        }
     </div>;
+//        {
+//            this.props.files.map((file) => {
+//                if (file.type != 'Scene')
+//                    return (
+//                        <div key={file.name} className="gameobjectlist-item">
+//                            <div className="gameobjectlist-list_item_instance">
+//                                <List_item name={file.name}/>
+//                            </div>
+//                        </div>
+//                    )
+//            })
+//        }
+
 };
 
 export default function (props) {

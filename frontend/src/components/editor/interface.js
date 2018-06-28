@@ -22,6 +22,10 @@ class Editor extends React.Component {
             scenes: [],
             selected_scene: 0,
             selected_game_object: -1,
+            game_object_count: {
+                'Rectangle': 0, 'Circle': 0, 'Polygon': 0, 'Sprite': 0, 'Text': 0,
+                'Generic': 0
+            },
             files: [],
             selected_file: 0,
             file_count: {
@@ -58,6 +62,10 @@ class Editor extends React.Component {
                 scenes: [],
                 selected_scene: 0,
                 selected_game_object: -1,
+                game_object_count: {
+                    'Rectangle': 0, 'Circle': 0, 'Polygon': 0, 'Sprite': 0, 'Text': 0,
+                    'Generic': 0
+                },
                 files: [],
                 selected_file: -1,
                 file_count: {
@@ -83,9 +91,14 @@ class Editor extends React.Component {
 
     createGameObject(name) {
         var scene = this.state.scenes[this.state.selected_scene];
-        var object_name = name + "_" + scene.game_object_count[name];
+        const game_object_count = this.state.game_object_count
+        var object_name = name + "_" + game_object_count[name];
+        game_object_count[name]++;
+        this.setState({
+            game_object_count: game_object_count,
+        })
         this.updateGameObjectSelection(scene.game_objects.length - 1);
-        this.createFile(object_name, true);
+        this.createFile(object_name, object_name, true);
 
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -129,19 +142,21 @@ class Editor extends React.Component {
     }
 
     updateScenes() {
+        var files = this.state.files;
+        var i = files.length
+        while (i--)
+            if (files[i].type == 'Scene')
+                files.splice(i, 1);
+
         axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
             .then(response => {
-                    //TODO delete all scenes and re add tem here
+                    files.push(response.data.map((scene) => new File(scene.name, 'Scene')));
                     this.setState({
                         scenes: response.data.map((scene) => new SceneGame(scene.name, scene.id)),
                         selectorIsOpen: false,
                         selected_scene: 0,
                         selected_game_object: -1,
-                        files: response.data.map((scene) => new File(scene.name, "Scene")),
-                        selected_file: 0,
-                        file_count: {
-                            'Controller': 0, 'Animation': 0
-                        }
+                        files: files,
                     });
                 }
             ).then(()=>this.updateGameObjects(this.state.scenes[this.state.selected_scene]));
