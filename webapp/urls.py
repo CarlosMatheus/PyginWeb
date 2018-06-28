@@ -27,6 +27,6 @@ urlpatterns = [
     path('login/', login, {'template_name': 'login.html'}),
     path('logout/', logout, {'next_page': '/'}),
     path('api/', include('editor.urls')),
-    path('home/', TemplateView.as_view(template_name="home.html")),
+    path('', TemplateView.as_view(template_name="home.html")),
     url(r'^', TemplateView.as_view(template_name="index.html")),
 ]
