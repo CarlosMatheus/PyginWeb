@@ -8,13 +8,15 @@ function Project(props) {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-8">
-                    <a onClick={() => window.alert("not implemente yet")} >{props.name}</a>
+                <div className="">
+                    <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => window.alert("not implemente yet")} >{props.name}</button>
+                    {/*<a onClick={() => window.alert("not implemente yet")} >{props.name}</a>*/}
                 </div>
-                <div className="col-4">
-                    <button onClick={() => props.onClickSelect()}>
-                    Delete
-                    </button>
+                <div className="">
+                    <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => props.onClickSelect()}>Delete</button>
+                    {/*<button onClick={() => props.onClickSelect()}>*/}
+                    {/*Delete*/}
+                    {/*</button>*/}
                 </div>
             </div>
         </div>
@@ -50,21 +52,41 @@ class CreateProject extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-8">
-                        <input type="text" onChange={(evt) => {
-                            this.state.projectName = evt.target.value
-                        }}>{}</input>
+                    <div className="col-12">
+                        <div className="input-group mb-3">
+                            <input type="text" className="form-control" placeholder="New project's name"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(evt) => {
+                                this.state.projectName = evt.target.value
+                            }}>{}</input>
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-secondary" type="button" onClick={() => {
+                                        this.createProject(this.state.projectName);
+                                        this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
+                                        this.props.onClose();
+                                        this.props.updateList();
+                                    }}>
+                                        Add Project
+                                    </button>
+                                </div>
+                        </div>
                     </div>
-                    <div className="col-4">
-                        <button onClick={() => {
-                            this.createProject(this.state.projectName);
-                            this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
-                            this.props.onClose();
-                            this.props.updateList();
-                        }}>
-                            Add Project
-                        </button>
-                    </div>
+
+
+                    {/*<div className="col-8">*/}
+                        {/*<input type="text" onChange={(evt) => {*/}
+                            {/*this.state.projectName = evt.target.value*/}
+                        {/*}}>{}</input>*/}
+                    {/*</div>*/}
+                    {/*<div className="col-4">*/}
+                        {/*<button onClick={() => {*/}
+                            {/*this.createProject(this.state.projectName);*/}
+                            {/*this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);*/}
+                            {/*this.props.onClose();*/}
+                            {/*this.props.updateList();*/}
+                        {/*}}>*/}
+                            {/*Add Project*/}
+                        {/*</button>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         )
