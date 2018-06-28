@@ -116,3 +116,18 @@ def Download(request):
 class CreateTransform(generics.CreateAPIView):
     queryset = Transform.objects.all()
     serializer_class = TransformSerializer
+
+
+class ListTransforms(generics.ListAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformSerializer
+    lookup_field = 'gameobject'
+
+    def get_queryset(self):
+        return Transform.objects.filter(scene=self.kwargs['gameobject'])
+
+
+class DestroyTransform(generics.DestroyAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformSerializer
+    lookup_field = "id"
