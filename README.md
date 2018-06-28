@@ -43,9 +43,13 @@ npm start
 
 Now you are free to test the webapp by opening 127.0.0.1:8000 on your browser!
 
+## Notes about documentation and contributing
+
+If any substantial change is made, please, help out with the documentation using the [wiki](https://github.com/CarlosMatheus/Balance/wiki).
+
 ## About
 
-This project aims to make the process of game development using python easier. To understand a little bit more about how the code is structured visit the wiki.
+This project aims to make the process of game development using python easier. To understand a little bit more about how the code is structured visit the [wiki](https://github.com/CarlosMatheus/Engine/wiki).
 
 ## Authors
 
@@ -54,6 +58,7 @@ This project aims to make the process of game development using python easier. T
 * **Igor Albuquerque Silva** - [igoralbuq](https://github.com/igoralbuq)
 * **Eric Pereira Queiroz Moreira** - [ericpqmor](https://github.com/ericpqmor)
 * **Igor Mourão Ribeiro** - [igor-ribeiiro](https://github.com/igor-ribeiiro)
+* **Luiz Henrique Aguiar** -[HikkusT](https://github.com/HikkusT)
 
 ## License
 
