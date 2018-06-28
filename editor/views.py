@@ -108,3 +108,11 @@ def Download(request):
     response = HttpResponse(FilePointer, content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename=GameFiles.zip'
     return response
+
+
+"""Views for transform"""
+
+
+class CreateTransform(generics.CreateAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformSerializer

@@ -22,3 +22,15 @@ class GameObject(models.Model):
     scene = models.ForeignKey(Scene, on_delete=models.CASCADE)
 
 
+class Transform(models.Model):
+    id = models.IntegerField(primary_key=True)
+    positionx = models.DecimalField(decimal_places=2, max_digits=20)
+    positiony = models.DecimalField(decimal_places=2, max_digits=20)
+    positionz = models.DecimalField(decimal_places=2, max_digits=20)
+    rotation = models.DecimalField(decimal_places=2, max_digits=20)
+    scalex = models.DecimalField(decimal_places=2, max_digits=20)
+    scaley = models.DecimalField(decimal_places=2, max_digits=20)
+    gameobject = models.ForeignKey(GameObject, on_delete=models.CASCADE)
+
+
+
