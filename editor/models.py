@@ -10,12 +10,15 @@ class Project(models.Model):
 
 
 class Scene(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
 
 class GameObject(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200)
-    user = models.ForeignKey(Scene, on_delete=models.CASCADE)
+    type = models.CharField(max_length=200)
+    scene = models.ForeignKey(Scene, on_delete=models.CASCADE)
 
 

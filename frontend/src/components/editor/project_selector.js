@@ -44,9 +44,9 @@ class CreateProject extends React.Component {
         return (
             <div>
                 <button onClick={() => {
-                    this.props.onClick();
                     this.createProject(this.state.projectName);
-                    this.props.changeCurrentProject(this.state.projectName, this.state.projectId);
+                    this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
+                    this.props.onClose();
                     this.props.updateList();
                 }}>
                     Add Project
@@ -114,13 +114,9 @@ class ProjectSelector extends React.Component {
                         })
                     }
                     <CreateProject
-                        onClick={() => {
-                            this.props.onClose()
-                        }}
-                        changeCurrentProject={this.props.changeCurrentProject}
-                        updateList={() => {
-                            this.getList()
-                        }}
+                        onClose={() => this.props.onClose()}
+                        changeCurrentProject={() => this.props.changeCurrentProject}
+                        updateList={() => this.getList()}
                         getIndex={()=>this.getNextIndex()}
                     />
                 </div>
