@@ -12,4 +12,9 @@ urlpatterns = [
     path('scenes/', views.CreateScene.as_view()),
     path('scenes/<project>/', views.ListScenes.as_view()),
     path('scenes/destroy/<id>/', views.DestroyScene.as_view()),
+
+    # Paths for game object
+    path('gameobjects/', views.CreateGameObject.as_view()),
+    path('gameobjects/<scene>/', views.ListGameObjects.as_view()),
+    path('gameobjects/destroy/<id>/', views.DestroyGameObject.as_view()),
 ]

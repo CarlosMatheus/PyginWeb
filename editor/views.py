@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
-from .models import Scene, Project
-from .serializers import SceneSerializer, SceneGetSerializer, ProjectSerializer
+from .models import *
+from .serializers import *
 import datetime
 
 """Views for project"""
@@ -56,6 +56,29 @@ class ListScenes(generics.ListAPIView):
 
 
 class DestroyScene(generics.DestroyAPIView):
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
+    queryset = Scene.objects.all()
+    serializer_class = SceneGetSerializer
+    lookup_field = "id"
+
+
+"""Views for game object"""
+
+
+class CreateGameObject(generics.CreateAPIView):
+    queryset = GameObject.objects.all()
+    serializer_class = GameObjectSerializer
+
+
+class ListGameObjects(generics.ListAPIView):
+    queryset = GameObject.objects.all()
+    serializer_class = GameObjectGetSerializer
+    lookup_field = 'scene'
+
+    def get_queryset(self):
+        return GameObject.objects.filter(scene=self.kwargs['scene'])
+
+
+class DestroyGameObject(generics.DestroyAPIView):
+    queryset = GameObject.objects.all()
+    serializer_class = GameObjectSerializer
     lookup_field = "id"

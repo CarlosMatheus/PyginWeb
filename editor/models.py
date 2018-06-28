@@ -18,6 +18,7 @@ class Scene(models.Model):
 class GameObject(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=200)
-    user = models.ForeignKey(Scene, on_delete=models.CASCADE)
+    type = models.CharField(max_length=200)
+    scene = models.ForeignKey(Scene, on_delete=models.CASCADE)
 
 
