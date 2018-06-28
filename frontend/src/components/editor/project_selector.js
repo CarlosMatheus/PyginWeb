@@ -10,6 +10,9 @@ function Project(props) {
             <button onClick={() => props.onClickSelect()}>
                 Delete
             </button>
+            <button onClick={() => window.alert("not implemente yet")}>
+                Select
+            </button>
 
         </div>
     )
