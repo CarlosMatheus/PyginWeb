@@ -2,7 +2,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from .models import *
 from .serializers import *
+from django.http import HttpResponse
 import datetime
+import os
 
 """Views for project"""
 
@@ -82,3 +84,27 @@ class DestroyGameObject(generics.DestroyAPIView):
     queryset = GameObject.objects.all()
     serializer_class = GameObjectSerializer
     lookup_field = "id"
+
+
+"""Download return"""
+
+import zipfile
+
+def zipdir(path, ziph):
+    # ziph is zipfile handle
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            ziph.write(os.path.join(root, file))
+
+
+def Download(request):
+    file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    zipf = zipfile.ZipFile('./download/Python.zip', 'w', zipfile.ZIP_DEFLATED)
+    zipdir(file_path+'/download/subdirectories', zipf)
+    zipf.close()
+    with open(file_path+'/download/Python.zip','rb') as f:
+        FilePointer = f.read()
+
+    response = HttpResponse(FilePointer, content_type='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=GameFiles.zip'
+    return response

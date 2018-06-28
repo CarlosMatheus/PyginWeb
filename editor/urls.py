@@ -17,4 +17,7 @@ urlpatterns = [
     path('gameobjects/', views.CreateGameObject.as_view()),
     path('gameobjects/<scene>/', views.ListGameObjects.as_view()),
     path('gameobjects/destroy/<id>/', views.DestroyGameObject.as_view()),
+
+    # Path to download
+    path('download/', views.Download)
 ]

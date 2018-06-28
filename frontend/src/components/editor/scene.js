@@ -8,11 +8,13 @@ function render() {
         <div className="scene-0">
             <div className="scene-rectangle_3">
                 <div className="scene-0-0-0">
-                    <div onClick={this.props.handleClick} className="scene-rectangle_4">
+                    <a href={'/api/download/'}>
+                    <div className="scene-rectangle_4">
                         <div className="scene-0-0-0-0-0">
                             <img src="https://ucarecdn.com/01248272-e9af-4690-8033-f33b42c6384a/" className="scene-image_3" /> 
                         </div>
                     </div>
+                        </a>
                 </div>
             </div>
         </div>
