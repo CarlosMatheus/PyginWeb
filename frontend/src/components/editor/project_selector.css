@@ -1,8 +1,11 @@
 .popup-content{
-    height: 20%;
+    height: auto;
 }
 
 .modal{
     position: relative;
     display: flex;
+}
+
+.popup-style{
 }

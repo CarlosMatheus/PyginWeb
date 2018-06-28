@@ -6,14 +6,17 @@ import './project_selector.css';
 //Project item
 function Project(props) {
     return (
-        <div>{props.name}
-            <button onClick={() => props.onClickSelect()}>
-                Delete
-            </button>
-            <button onClick={() => window.alert("not implemente yet")}>
-                Select
-            </button>
-
+        <div className="container">
+            <div className="row">
+                <div className="col-8">
+                    <a onClick={() => window.alert("not implemente yet")} >{props.name}</a>
+                </div>
+                <div className="col-4">
+                    <button onClick={() => props.onClickSelect()}>
+                    Delete
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }
@@ -45,18 +48,24 @@ class CreateProject extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={() => {
-                    this.createProject(this.state.projectName);
-                    this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
-                    this.props.onClose();
-                    this.props.updateList();
-                }}>
-                    Add Project
-                </button>
-                <input type="text" onChange={(evt) => {
-                    this.state.projectName = evt.target.value
-                }}>{}</input>
+            <div className="container">
+                <div className="row">
+                    <div className="col-8">
+                        <input type="text" onChange={(evt) => {
+                            this.state.projectName = evt.target.value
+                        }}>{}</input>
+                    </div>
+                    <div className="col-4">
+                        <button onClick={() => {
+                            this.createProject(this.state.projectName);
+                            this.props.changeCurrentProject(this.state.projectName, this.state.projectId, true);
+                            this.props.onClose();
+                            this.props.updateList();
+                        }}>
+                            Add Project
+                        </button>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -106,22 +115,30 @@ class ProjectSelector extends React.Component {
     render() {
         return (
             <Popup open={this.props.open} onClose={this.props.onClose}>
-                <div className="modal">
-                    {
-                        this.state.indexes.map((item) => {
-                            return (
-                                <Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}
-                                         onClickSelect={() => this.deleteProject(item)}
+                <div className="popup-style">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-2"></div>
+                            <div className="col-8">
+                                {
+                                    this.state.indexes.map((item) => {
+                                        return (
+                                            <Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}
+                                                     onClickSelect={() => this.deleteProject(item)}
+                                            />
+                                        )
+                                    })
+                                }
+                                <CreateProject
+                                    onClose={() => this.props.onClose()}
+                                    changeCurrentProject={() => this.props.changeCurrentProject}
+                                    updateList={() => this.getList()}
+                                    getIndex={()=>this.getNextIndex()}
                                 />
-                            )
-                        })
-                    }
-                    <CreateProject
-                        onClose={() => this.props.onClose()}
-                        changeCurrentProject={() => this.props.changeCurrentProject}
-                        updateList={() => this.getList()}
-                        getIndex={()=>this.getNextIndex()}
-                    />
+                            </div>
+                            <div className="col-2"></div>
+                        </div>
+                    </div>
                 </div>
             </ Popup>
         )
