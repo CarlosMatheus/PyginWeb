@@ -8,6 +8,7 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 import GameObject from './engine_classes/game_object'
 import SceneGame from './engine_classes/scene'
+import axios from 'axios'
 import File from './engine_classes/file'
 
 class Editor extends React.Component {
@@ -36,7 +37,7 @@ class Editor extends React.Component {
         else document.title = this.state.project;
     }
 
-    changeCurrentProject(newProj, projId, isNewProj=false) {
+    changeCurrentProject(newProj, projId, isNewProj = false) {
         this.setState({
             project: newProj,
             project_id: projId,
@@ -66,19 +67,23 @@ class Editor extends React.Component {
                 }
             })
         } else {
-            // TODO: load info
-            this.setState({
-                selectorIsOpen: false,
-                scenes: [new SceneGame('Scene_1')],
-                selected_scene: 0,
-                game_object_list: [],
-                selected_game_object: -1,
-                files: [new File('Scene_1', 'Scene')],
-                selected_file: 0,
-                file_count: {
-                    'Controller': 0, 'Animation': 0
+            axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
+                .then(response => {this.setState({
+                        scenes: response.data.map((scene) => new Scene(scene.name)),
+                        selectorIsOpen: false,
+                        selected_scene: 0,
+                        //scenes: ['ola', 'ola2'],
+                        game_object_list: [],
+                        selected_game_object: -1,
+                        files: response.data.map((scene) => scene.name),
+                        selected_file: 0,
+                        file_count: {
+                            'Controller': 0, 'Animation': 0
+                        }
+                    });
+                window.alert(response.data.map((scene) => scene.name));
                 }
-            })
+                );
         }
     }
 
@@ -138,7 +143,7 @@ class Editor extends React.Component {
         });
     }
 
-    changeScene(index){
+    changeScene(index) {
         this.setState({
             selected_scene: index,
         })
@@ -170,7 +175,7 @@ class Editor extends React.Component {
                                                       create_file={(name) => this.createFile(name)}
                                                       scenes={this.state.scenes}
                                                       create_scene={(name) => this.createScene(name)}
-                                                      change_scene={(index)=> this.changeScene(index)}
+                                                      change_scene={(index) => this.changeScene(index)}
                                         />
                                     </div>
                                 </div>
