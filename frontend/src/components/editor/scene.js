@@ -4,75 +4,145 @@ import './scene.css';
 import './scene-style.css'
 
 function render() {
-    return <div className="scene-scene-3">
-        <div className="scene-0">
-            <div className="scene-rectangle_3">
-                <div className="scene-0-0-0">
-                    <div onClick={this.props.handleClick} className="scene-rectangle_4">
-                        <div className="scene-0-0-0-0-0">
-                            <img src="https://ucarecdn.com/01248272-e9af-4690-8033-f33b42c6384a/" className="scene-image_3" /> 
+    if (this.props.rectangle_pos[0] != 0 && this.props.rectangle_pos[1] != 0)
+        return <div className="scene-scene-3">
+            <div className="scene-0">
+                <div className="scene-rectangle_3">
+                    <div className="scene-0-0-0">
+                        <div onClick={this.props.handleClick} className="scene-rectangle_4">
+                            <div className="scene-0-0-0-0-0">
+                                <img src="https://ucarecdn.com/01248272-e9af-4690-8033-f33b42c6384a/" className="scene-image_3" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="scene-1">
-            <div className="scene-rectangle_21">
-                <div className="scene-1-0-0">
-                    <div className="scene-rectangle_3-2">
-                        <div className="scene-1-0-0-0-0">
-                            <div className="scene-rectangle_4-9">
-                                <div className="scene-1-0-0-0-0-0-0">
-                                    <div className="scene-1-0-0-0-0-0-0-0">
-                                        <div className="scene-1-0-0-0-0-0-0-0-0">
-                                            <div className="scene-rectangle_4-1" /> 
-                                        </div>
-                                    </div>
-                                    <div className="scene-1-0-0-0-0-0-0-1">
-                                        <div className="scene-1-0-0-0-0-0-0-1-0">
-                                            <div className="scene-gameobjectlist-4">
-                                                {this.props.current_scene != null ? this.props.current_scene.name : "No Scene"}
+            <div className="scene-1">
+                <div className="scene-rectangle_21">
+                    <div className="scene-1-0-0">
+                        <div className="scene-rectangle_3-2">
+                            <div className="scene-1-0-0-0-0">
+                                <div className="scene-rectangle_4-9">
+                                    <div className="scene-1-0-0-0-0-0-0">
+                                        <div className="scene-1-0-0-0-0-0-0-0">
+                                            <div className="scene-1-0-0-0-0-0-0-0-0">
+                                                <div className="scene-rectangle_4-1" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="scene-1-0-0-0-0-0-0-2">
-                                        <div className="scene-1-0-0-0-0-0-0-2-0">
-                                            <div className="scene-rectangle_4-8" /> 
+                                        <div className="scene-1-0-0-0-0-0-0-1">
+                                            <div className="scene-1-0-0-0-0-0-0-1-0">
+                                                <div className="scene-gameobjectlist-4">
+                                                    {this.props.current_scene != null ? this.props.current_scene.name : "No Scene"}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="scene-1-0-0-0-0-0-0-2">
+                                            <div className="scene-1-0-0-0-0-0-0-2-0">
+                                                <div className="scene-rectangle_4-8" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="scene-1-0-1">
-                    <div className="scene-rectangle-3">
-                        <div className="scene-1-0-1-0-0">
-                            <div className="scene-rectangle_2" /> 
+                    <div className="scene-1-0-1">
+                        <div className="scene-rectangle-3">
+                            <div className="scene-1-0-1-0-0">
+                                <div className="scene-rectangle_2" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="scene-1-0-2">
-                    <div className="scene-rectangle-6" /> 
-                </div>
-            </div>
-        </div>
-        <div className="scene-2">
-            <div className="scene-rectangle_26">
-                <div className="scene-2-0-0">
-                    <div className="scene-image_4">
-                        <div className="scene-2-0-0-0-0" /> 
-                        <div className="scene-2-0-0-0-1">
-                            <div className="scene-2-0-0-0-1-0" /> 
-                            <div className="scene-rectangle_37" /> 
-                            <div className="scene-2-0-0-0-1-2" /> 
-                        </div>
-                        <div className="scene-2-0-0-0-2" /> 
+                    <div className="scene-1-0-2">
+                        <div className="scene-rectangle-6" />
                     </div>
                 </div>
             </div>
-        </div>
-    </div>;
+            <div className="scene-2">
+                <div className="scene-rectangle_26">
+                    <div className="scene-2-0-0">
+                        <div className="scene-image_4">
+                            <div className="scene-2-0-0-0-0" />
+                            <div className="scene-2-0-0-0-1">
+                                <div className="scene-2-0-0-0-1-0" />
+                                <div className="scene-rectangle_37" />
+                                <div className="scene-2-0-0-0-1-2" />
+                            </div>
+                            <div className="scene-2-0-0-0-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>;
+    else
+        return <div className="scene-scene-3">
+            <div className="scene-0">
+                <div className="scene-rectangle_3">
+                    <div className="scene-0-0-0">
+                        <div onClick={this.props.handleClick} className="scene-rectangle_4">
+                            <div className="scene-0-0-0-0-0">
+                                <img src="https://ucarecdn.com/01248272-e9af-4690-8033-f33b42c6384a/" className="scene-image_3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="scene-1">
+                <div className="scene-rectangle_21">
+                    <div className="scene-1-0-0">
+                        <div className="scene-rectangle_3-2">
+                            <div className="scene-1-0-0-0-0">
+                                <div className="scene-rectangle_4-9">
+                                    <div className="scene-1-0-0-0-0-0-0">
+                                        <div className="scene-1-0-0-0-0-0-0-0">
+                                            <div className="scene-1-0-0-0-0-0-0-0-0">
+                                                <div className="scene-rectangle_4-1" />
+                                            </div>
+                                        </div>
+                                        <div className="scene-1-0-0-0-0-0-0-1">
+                                            <div className="scene-1-0-0-0-0-0-0-1-0">
+                                                <div className="scene-gameobjectlist-4">
+                                                    {this.props.current_scene != null ? this.props.current_scene.name : "No Scene"}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="scene-1-0-0-0-0-0-0-2">
+                                            <div className="scene-1-0-0-0-0-0-0-2-0">
+                                                <div className="scene-rectangle_4-8" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="scene-1-0-1">
+                        <div className="scene-rectangle-3">
+                            <div className="scene-1-0-1-0-0">
+                                <div className="scene-rectangle_2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="scene-1-0-2">
+                        <div className="scene-rectangle-6" />
+                    </div>
+                </div>
+            </div>
+            <div className="scene-2">
+                <div className="scene-rectangle_26">
+                    <div className="scene-2-0-0">
+                        <div className="scene-image_4">
+                            <div className="scene-2-0-0-0-0" />
+                            <div className="scene-2-0-0-0-1">
+                                <div className="scene-2-0-0-0-1-0" />
+                                <div className="scene-2-0-0-0-1-2" />
+                            </div>
+                            <div className="scene-2-0-0-0-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>;
 };
 
 export default function(props) {

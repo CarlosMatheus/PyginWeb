@@ -3,6 +3,7 @@ class SceneGame {
         this.id = id;
         this.name = name;
         this.game_objects = [];
+        this.rectangle_pos = [0, 0];
     }
 }
 
