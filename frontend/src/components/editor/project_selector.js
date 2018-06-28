@@ -7,10 +7,11 @@ import './project_selector.css';
 function Project(props) {
     return (
         <div>{props.name}
-            <button onClick={() => props.onClickSelect()}>
+            <button onClick={() => props.onClickDelete()}>
                 Delete
             </button>
-            <button onClick={() => window.alert("not implemente yet")}>
+            <button onClick={() => {props.onClickSelect(props.name, props.id);
+            }}>
                 Select
             </button>
 
@@ -111,7 +112,11 @@ class ProjectSelector extends React.Component {
                         this.state.indexes.map((item) => {
                             return (
                                 <Project key={item} name={this.state.items[this.state.indexes.indexOf(item)]}
-                                         onClickSelect={() => this.deleteProject(item)}
+                                         id = {item}
+                                         onClickDelete={() => this.deleteProject(item)}
+                                         onClickSelect={(name, id) => {this.props.changeCurrentProject(name, id);
+                                         this.props.onClose();
+                                         }}
                                 />
                             )
                         })
