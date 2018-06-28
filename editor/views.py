@@ -120,11 +120,11 @@ class CreateTransform(generics.CreateAPIView):
 
 class ListTransforms(generics.ListAPIView):
     queryset = Transform.objects.all()
-    serializer_class = TransformSerializer
+    serializer_class = TransformGetSerializer
     lookup_field = 'gameobject'
 
     def get_queryset(self):
-        return Transform.objects.filter(scene=self.kwargs['gameobject'])
+        return Transform.objects.filter(gameobject=self.kwargs['gameobject'])
 
 
 class DestroyTransform(generics.DestroyAPIView):

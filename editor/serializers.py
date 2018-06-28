@@ -83,3 +83,19 @@ class TransformSerializer(serializers.ModelSerializer):
         )
 
         model = models.Transform
+
+
+class TransformGetSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'id',
+            'positionx',
+            'positiony',
+            'positionz',
+            'rotation',
+            'scalex',
+            'scaley',
+            'gameobject'
+        )
+
+        model = models.Transform

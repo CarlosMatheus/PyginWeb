@@ -23,5 +23,7 @@ urlpatterns = [
 
     # Paths to transform
     path('transforms/', views.CreateTransform.as_view()),
+    path('transforms/<gameobject>/', views.ListTransforms.as_view()),
+    path('transforms/destroy/<id>/', views.DestroyTransform.as_view()),
 
 ]
