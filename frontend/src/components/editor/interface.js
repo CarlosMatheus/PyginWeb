@@ -101,9 +101,9 @@ class Editor extends React.Component {
         scene.game_objects.push(new GameObject(object_name));
 
         const game_object_list = this.state.game_object_list;
-        game_object_list.push(scene.game_objects[scene.game_object_count]);
+        game_object_list.push(scene.game_objects[scene.game_objects.length - 1]);
         this.updateGameObjectSelection(game_object_list.length - 1);
-        this.createFile(object_name);
+        this.createFile(object_name, true);
         this.setState({
             game_object_list: game_object_list,
         });
