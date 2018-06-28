@@ -22,6 +22,10 @@ class Editor extends React.Component {
             scenes: [],
             selected_scene: 0,
             selected_game_object: -1,
+            game_object_count: {
+                'Rectangle': 0, 'Circle': 0, 'Polygon': 0, 'Sprite': 0, 'Text': 0,
+                'Generic': 0
+            },
             files: [],
             selected_file: 0,
             file_count: {
@@ -58,6 +62,10 @@ class Editor extends React.Component {
                 scenes: [],
                 selected_scene: 0,
                 selected_game_object: -1,
+                game_object_count: {
+                    'Rectangle': 0, 'Circle': 0, 'Polygon': 0, 'Sprite': 0, 'Text': 0,
+                    'Generic': 0
+                },
                 files: [],
                 selected_file: -1,
                 file_count: {
@@ -83,11 +91,24 @@ class Editor extends React.Component {
 
     createGameObject(name) {
         var scene = this.state.scenes[this.state.selected_scene];
-        var object_name = name + "_" + scene.game_object_count[name];
-        scene.game_object_count[name]++;
-        scene.game_objects.push(new GameObject(object_name));
+        const game_object_count = this.state.game_object_count
+        var object_name = name + "_" + game_object_count[name];
+        game_object_count[name]++;
+        this.setState({
+            game_object_count: game_object_count,
+        })
         this.updateGameObjectSelection(scene.game_objects.length - 1);
-        this.createFile(object_name, true);
+        this.createFile(object_name, object_name, true);
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.post(
+            "http://127.0.0.1:8000/api/gameobjects/",
+            {
+                "name": object_name,
+                "type" : object_name,
+                "scene": scene.id,
+            }).then(() => this.changeScene(this.state.selected_scene))
     }
 
     createFile(name, type = name, isTrueName = false) {
@@ -117,32 +138,43 @@ class Editor extends React.Component {
             {
                 "name": scene_name,
                 "project": this.state.project_id,
-            }).then(()=>this.updateScenes())
+            }).then(() => this.updateScenes())
     }
 
     updateScenes() {
+        var files = this.state.files;
+        var i = files.length
+        while (i--)
+            if (files[i].type == 'Scene')
+                files.splice(i, 1);
+
         axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
             .then(response => {
-                    //TODO delete all scenes and re add tem here
+                    files.push(response.data.map((scene) => new File(scene.name, 'Scene')));
                     this.setState({
                         scenes: response.data.map((scene) => new SceneGame(scene.name, scene.id)),
                         selectorIsOpen: false,
                         selected_scene: 0,
                         selected_game_object: -1,
-                        files: response.data.map((scene) => new File(scene.name, "Scene")),
-                        selected_file: 0,
-                        file_count: {
-                            'Controller': 0, 'Animation': 0
-                        }
+                        files: files,
                     });
                 }
-            );
+            ).then(()=>this.updateGameObjects(this.state.scenes[this.state.selected_scene]));
     }
 
     changeScene(index) {
         this.setState({
             selected_scene: index,
-        })
+        });
+        this.updateGameObjects(this.state.scenes[index]);
+    }
+
+    updateGameObjects(scene) {
+        axios.get('http://127.0.0.1:8000/api/gameobjects/' + scene.id + '/')
+            .then(response => {
+                    scene.game_objects = response.data.map((gameobject) => new GameObject(gameobject.name));
+                }
+            ).then(()=>this.setState(this.state));
     }
 
     render() {
@@ -178,7 +210,8 @@ class Editor extends React.Component {
                                 </div>
                                 <div className="col-6">
                                     <div className="main-component">
-                                        <Scene current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
+                                        <Scene
+                                            current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
                                     </div>
                                 </div>
                                 <div className="col">
