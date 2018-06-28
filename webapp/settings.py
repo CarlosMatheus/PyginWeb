@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'webpack_loader',
     'frontend',
-    'home',
     'authentication',
     'editor'
 ]
@@ -138,6 +137,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'staticfiles'),
+)
+
 
 LOGIN_REDIRECT_URL = '/editor/'
 LOGIN_URL = '/login/'

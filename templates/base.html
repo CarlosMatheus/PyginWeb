@@ -13,46 +13,11 @@
 
     {% block additional_head %}{% endblock %}
 </head>
+
+
 <body style="padding-top:65px;">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Pygin Web</a>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-        </div>
-        <div class="navbar-pyginweb" id="navbar">
-            <ul class="nav navbar-nav">
-                {% if  request.user.is_authenticated %}
-                    <li>
-                        <a href="/editor/">Editor</a>
-                    </li>
-                    <li>
-                        <a href="/logout/">Logout</a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="/register/">Register</a>
-                    </li>
-                    <li>
-                        <a href="/login/">Login</a>
-                    </li>
-                {% endif %}
-            </ul>
-            {% if  request.user.is_authenticated %}
-                <p class="navbar-text pull-right">Hi, {{ request.user }}</p>
-            {% endif %}
-        </div>
-    </div>
-    <!-- /.container -->
-</nav>
+
+
 <div class="container" style="margin-bottom:50px;">
     {% if messages %}
         {% for message in messages %}
@@ -62,6 +27,8 @@
             </div>
         {% endfor %}
     {% endif %}
+
+
     <!-- MAIN PAGE CONTENT -->
     {% block main_content %}{% endblock %}
 </div>

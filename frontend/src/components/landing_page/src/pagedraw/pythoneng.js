@@ -31,7 +31,7 @@ function render() {
                                             </div>
                                             <div className="zpythoneng-0-0-0-0-0-0-0-1-0-1">
                                                 <div className="zpythoneng-0-0-0-0-0-0-0-1-0-1-0">
-                                                    <a href="/home/" className="zpythoneng-0-0-0-0-0-0-0-1-0-1-0-0">
+                                                    <a href="/login/" className="zpythoneng-0-0-0-0-0-0-0-1-0-1-0-0">
                                                         <div className="zpythoneng-home_1">Start Exploring</div>
                                                     </a>
                                                 </div>
@@ -55,7 +55,7 @@ function render() {
                                             </div>
                                         </div>
                                         <div className="zpythoneng-0-0-0-0-0-0-0-1-4">
-                                            <a href="/home/" className="zpythoneng-0-0-0-0-0-0-0-1-4-0">
+                                            <a href="/login/" className="zpythoneng-0-0-0-0-0-0-0-1-4-0">
                                                 <div onClick={this.props.handleClick} className="zpythoneng-start_exploring-1">
                                                     START EXPLORING
                                                 </div>
