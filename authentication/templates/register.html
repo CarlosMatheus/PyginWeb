@@ -1,37 +1,89 @@
 {% extends "base.html" %}
 {% block main_content %}
-<div class="row">
-    <div class="col-lg-12">
-        <h3>Register</h3>
-        <hr>
+    {% load static %}
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication.css' %}" />
+    <script type="text/javascript" src="{% static 'authentication.js' %}"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
-        <form action="#" method="POST">
-            {% csrf_token %}
-            <fieldset>
-                {% for field in form %}
-                {% if field.errors %}
-                <div class="control-group error">
-                    <label class="control-label">{{ field.label }}</label>
-                    <div class="controls">{{ field }}
-                        <span class="help-inline">
-                            {% for error in field.errors %}{{ error }}{% endfor %}
-                        </span>
+<div class="container">
+   <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+            {% if  request.user.is_authenticated %}
+                <h2>WELCOME BACK</h2>
+                  <div class="my-style">
+                    <p>Hi, {{ request.user }}!</p>
+                    <p class="my-style-last">Ready to build awesome games?</p>
+                  </div>
+            {% else %}
+              <form id="register-form" action="#" method="POST" role="form">
+                  {% csrf_token %}
+                <h2>REGISTER</h2>
+                  <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password1" id="id_password1" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password2" id="id_password2" tabindex="2" class="form-control" placeholder="Confirm Password">
+                  </div>
+                  <div class="form-group">
+                      {% for field in form %}
+                        {% if field.errors %}
+                        {% for error in field.errors %}
+                            <p class="text-danger">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+                        {% endif %}
+                        {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                      </div>
                     </div>
-                </div>
-                {% else %}
-                <div class="control-group">
-                    <label class="control-label">{{ field.label }}</label>
-                    <div class="controls">{{ field }}
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </fieldset>
-            <br>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </form>
+            {% endif %}
             </div>
-        </form>
+          </div>
+        </div>
+        {% if  request.user.is_authenticated %}
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-6 tabs">
+                  <a href="/logout/"><div class="login" id="login">LOGOUT</div></a>
+                </div>
+                <div class="col-xs-6 tabs">
+                  <a href="/editor/"><div class="register" id="register">GO TO EDITOR</div></a>
+                </div>
+              </div>
+            </div>
+        {% else %}
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6 tabs">
+              <a href="/login/"><div class="login" id="login">LOGIN</div></a>
+            </div>
+            <div class="col-xs-6 tabs">
+              <a href="/register/"><div class="register" id="register">REGISTER</div></a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
+
+
+
+
+
