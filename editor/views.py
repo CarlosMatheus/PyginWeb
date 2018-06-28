@@ -127,6 +127,12 @@ class ListTransforms(generics.ListAPIView):
         return Transform.objects.filter(gameobject=self.kwargs['gameobject'])
 
 
+class UpdateTransform(generics.UpdateAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformGetSerializer
+    lookup_field = "id"
+
+
 class DestroyTransform(generics.DestroyAPIView):
     queryset = Transform.objects.all()
     serializer_class = TransformSerializer
