@@ -56,34 +56,18 @@ class Editor extends React.Component {
             this.setState({
                 isNewProj: false,
                 selectorIsOpen: false,
-                scenes: [new SceneGame('Scene_1')],
+                scenes: [],
                 selected_scene: 0,
                 game_object_list: [],
                 selected_game_object: -1,
-                files: [new File('Scene_1', 'Scene')],
+                files: [],
                 selected_file: -1,
                 file_count: {
                     'Controller': 0, 'Animation': 0
                 }
             })
         } else {
-            axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
-                .then(response => {this.setState({
-                        scenes: response.data.map((scene) => new Scene(scene.name)),
-                        selectorIsOpen: false,
-                        selected_scene: 0,
-                        //scenes: ['ola', 'ola2'],
-                        game_object_list: [],
-                        selected_game_object: -1,
-                        files: response.data.map((scene) => scene.name),
-                        selected_file: 0,
-                        file_count: {
-                            'Controller': 0, 'Animation': 0
-                        }
-                    });
-                window.alert(response.data.map((scene) => scene.name));
-                }
-                );
+            this.updateScenes();
         }
     }
 
@@ -114,7 +98,7 @@ class Editor extends React.Component {
         });
     }
 
-    createFile(name, type=name, isTrueName=false) {
+    createFile(name, type = name, isTrueName = false) {
         const files = this.state.files;
         const file_count = this.state.file_count;
         if (isTrueName)
@@ -132,15 +116,39 @@ class Editor extends React.Component {
 
     createScene() {
         const scenes = this.state.scenes;
-        const files = this.state.files;
-        var scene_name = "Scene_" + (scenes.length+1);
+        let scene_name = "Scene_" + (scenes.length + 1);
         scenes.push(new SceneGame(scene_name));
         this.createFile(scene_name, 'Scene', true);
-        this.setState({
-            scenes: scenes,
-            selected_scene: scenes.length-1,
-            files: files
-        });
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        axios.post(
+            "http://127.0.0.1:8000/api/scenes/",
+            {
+                "name": scene_name,
+                "project": this.state.project_id,
+            });
+        this.updateScenes();
+    }
+
+    updateScenes() {
+        axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
+            .then(response => {
+                    this.setState({
+                        scenes: response.data.map((scene) => new SceneGame(scene.name)),
+                        selectorIsOpen: false,
+                        selected_scene: 0,
+                        //scenes: ['ola', 'ola2'],
+                        game_object_list: [],
+                        selected_game_object: -1,
+                        files: response.data.map((scene) => scene.name),
+                        selected_file: 0,
+                        file_count: {
+                            'Controller': 0, 'Animation': 0
+                        }
+                    });
+                }
+            );
     }
 
     changeScene(index) {
@@ -181,7 +189,7 @@ class Editor extends React.Component {
                                 </div>
                                 <div className="col-6">
                                     <div className="main-component">
-                                        <Scene current_scene={this.state.scenes[this.state.selected_scene]}/>
+                                        <Scene current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
                                     </div>
                                 </div>
                                 <div className="col">
