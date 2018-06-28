@@ -139,7 +139,30 @@ def generate_files(project_id):
     if not os.path.exists(scripts):
         os.makedirs(scripts)
 
+"""Views for transform"""
 
 
+class CreateTransform(generics.CreateAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformSerializer
 
 
+class ListTransforms(generics.ListAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformGetSerializer
+    lookup_field = 'gameobject'
+
+    def get_queryset(self):
+        return Transform.objects.filter(gameobject=self.kwargs['gameobject'])
+
+
+class UpdateTransform(generics.UpdateAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformGetSerializer
+    lookup_field = "id"
+
+
+class DestroyTransform(generics.DestroyAPIView):
+    queryset = Transform.objects.all()
+    serializer_class = TransformSerializer
+    lookup_field = "id"
