@@ -4,6 +4,30 @@
     text-align: center;
 }
 
+.my-style{
+    margin-left: 30px;;
+}
+
+.my-style-last{
+    margin-bottom: 30px;;
+}
+
+#login:hover{
+     background-color: #EFF0F3;
+}
+
+#register:hover{
+     background: #3D4B68;
+}
+
+#login{
+}
+
+#register{
+     color: #EFF0F3;
+}
+
+
 body {
   padding-top: 90px;
   background:#F7F7F7;
