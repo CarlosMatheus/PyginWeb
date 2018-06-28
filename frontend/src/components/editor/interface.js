@@ -8,6 +8,7 @@ import './interface.css';
 import ProjectSelector from './project_selector'
 import GameObject from './engine_classes/game_object'
 import SceneGame from './engine_classes/scene'
+import File from './engine_classes/file'
 
 class Editor extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class Editor extends React.Component {
             selected_scene: 0,
             game_object_list: [],
             selected_game_object: -1,
-            files: ['Scene_1'],
+            files: [new File('Scene_1', 'Scene')],
             selected_file: 0,
             file_count: {
                 'Controller': 0, 'Animation': 0
@@ -58,7 +59,7 @@ class Editor extends React.Component {
                 selected_scene: 0,
                 game_object_list: [],
                 selected_game_object: -1,
-                files: ['Scene_1'],
+                files: [new File('Scene_1', 'Scene')],
                 selected_file: -1,
                 file_count: {
                     'Controller': 0, 'Animation': 0
@@ -72,7 +73,7 @@ class Editor extends React.Component {
                 selected_scene: 0,
                 game_object_list: [],
                 selected_game_object: -1,
-                files: ['Scene_1'],
+                files: [new File('Scene_1', 'Scene')],
                 selected_file: 0,
                 file_count: {
                     'Controller': 0, 'Animation': 0
@@ -108,7 +109,7 @@ class Editor extends React.Component {
         });
     }
 
-    createFile(name, isTrueName=false) {
+    createFile(name, type=name, isTrueName=false) {
         const files = this.state.files;
         const file_count = this.state.file_count;
         if (isTrueName)
@@ -126,12 +127,14 @@ class Editor extends React.Component {
 
     createScene() {
         const scenes = this.state.scenes;
+        const files = this.state.files;
         var scene_name = "Scene_" + (scenes.length+1);
         scenes.push(new SceneGame(scene_name));
-        this.createFile(scene_name, true);
+        this.createFile(scene_name, 'Scene', true);
         this.setState({
             scenes: scenes,
-            selected_scene: scenes.length-1
+            selected_scene: scenes.length-1,
+            files: files
         });
     }
 
