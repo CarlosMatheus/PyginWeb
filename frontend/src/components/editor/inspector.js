@@ -70,18 +70,17 @@ function render() {
                                         <div className="inspector-1-0-1-0-0-0-0-1-0">
                                             <div className="inspector-text-9">
                                                 <div className="dropdown">
-                                                                                                    <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
-                                                                                                            aria-haspopup="true" aria-expanded="false">
-                                                                                                        Create
-                                                                                                    </div>
-                                                                                                    <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
-                                                                                                        <a className="dropdown-item" href="#">Mesh</a>
-                                                                                                        <a className="dropdown-item" href="#">Collider</a>
-                                                                                                        <a className="dropdown-item" href="#">Particle System</a>
-                                                
-                                                <a className="dropdown-item" href="#">Physics</a>
-                                                                                                    </div>
-                                                                                            </div>
+                                                     <div className="gameobjectlist-text-6" id="dropdownMenuButton" data-toggle="dropdown"
+                                                          aria-haspopup="true" aria-expanded="false">
+                                                          Create
+                                                     </div>
+                                                     <div className="dropdown-menu my-dropdown" aria-labelledby="dropdownMenuButton">
+                                                         <a className="dropdown-item" href="#" onClick={() => this.props.create_component('Mesh')}>Mesh</a>
+                                                         <a className="dropdown-item" href="#" onClick={() => this.props.create_component('Collider')}>Collider</a>
+                                                         <a className="dropdown-item" href="#" onClick={() => this.props.create_component('Particle System')}>Particle System</a>
+                                                         <a className="dropdown-item" href="#" onClick={() => this.props.create_component('Physics')}>Physics</a>
+                                                     </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -114,21 +113,40 @@ function render() {
                 </div>
             </div>
         </div>
-        <div className="inspector-2">
-            <div className="inspector-transform_instance-7">
-                <Transform /> 
-            </div>
-        </div>
-        <div className="inspector-3">
-            <div className="inspector-rectanglemesh_instance-3">
-                <Rectanglemesh /> 
-            </div>
-        </div>
-        <div className="inspector-4">
-            <div className="inspector-physics_instance-9">
-                <Physics /> 
-            </div>
-        </div>
+        {
+            this.props.game_object.components.map((component) => {
+                if (component.name == 'Transform')
+                    return (
+                        <div
+                            key={component.name}
+                            className="inspectorlist-item">
+                            <div className="inspectorlist-list_item_instance">
+                                <Transform />
+                            </div>
+                        </div>
+                    )
+                else if (component.name == 'Mesh')
+                    return (
+                        <div
+                            key={component.name}
+                            className="inspectorlist-item">
+                            <div className="inspectorlist-list_item_instance">
+                                <Rectanglemesh />
+                            </div>
+                        </div>
+                    )
+                else if (component.name == 'Physics')
+                    return (
+                        <div
+                            key={component.name}
+                            className="inspectorlist-item">
+                            <div className="inspectorlist-list_item_instance">
+                                <Physics />
+                            </div>
+                        </div>
+                    )
+            })
+        }
     </div>;
 };
 

@@ -10,6 +10,7 @@ import GameObject from './engine_classes/game_object'
 import SceneGame from './engine_classes/scene'
 import axios from 'axios'
 import File from './engine_classes/file'
+import Component from './engine_classes/component'
 
 class Editor extends React.Component {
     constructor(props) {
@@ -175,6 +176,16 @@ class Editor extends React.Component {
                     scene.game_objects = response.data.map((gameobject) => new GameObject(gameobject.name));
                 }
             ).then(()=>this.setState(this.state));
+        this.updateGameObjectSelection(0);
+    }
+
+    createComponent(name) {
+        var components = this.state.scenes[this.state.selected_scene].game_objects[this.state.selected_game_object].components;
+        components.push(new Component(name));
+    }
+
+    updateComponent(component, field, value) {
+
     }
 
     render() {
@@ -214,9 +225,14 @@ class Editor extends React.Component {
                                             current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
                                     </div>
                                 </div>
+
                                 <div className="col">
                                     <div className="main-component">
-                                        <Inspector/>
+                                        <Inspector game_object={(this.state.scenes.length > 0 && this.state.scenes[this.state.selected_scene].game_objects.length > 0) ?
+                                                                this.state.scenes[this.state.selected_scene].game_objects[this.state.selected_game_object] : new GameObject(null, false)}
+                                                   create_component={(name) => this.createComponent(name)}
+                                                   update_component={(component, field, value) => this.update_component(component, field, value)}
+                                        />
                                     </div>
                                 </div>
                             </div>

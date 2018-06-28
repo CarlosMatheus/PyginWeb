@@ -130,7 +130,7 @@ function render() {
                 return (
                     <div
                         key={game_object}
-//                        onClick={() => this.props.updateGameObjectSelection(1)}}
+                        onClick={() => {this.props.updateGameObjectSelection(this.props.game_objects.indexOf(game_object))}}
                         className="gameobjectlist-item">
                         <div className="gameobjectlist-list_item_instance">
                             <List_item name={game_object.name}/>
