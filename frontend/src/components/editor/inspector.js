@@ -2,6 +2,7 @@
 import React from 'react';
 import Transform from './transform';
 import Rectanglemesh from './rectanglemesh';
+import Physics from './physics';
 import './inspector.css';
 import './styles.css'
 
@@ -121,6 +122,11 @@ function render() {
         <div className="inspector-3">
             <div className="inspector-rectanglemesh_instance-3">
                 <Rectanglemesh /> 
+            </div>
+        </div>
+        <div className="inspector-4">
+            <div className="inspector-physics_instance-9">
+                <Physics /> 
             </div>
         </div>
     </div>;
