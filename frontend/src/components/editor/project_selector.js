@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup'
 import axios from 'axios'
 import './popup.css'
 import './project_selector.css';
-const project_url = 'http://127.0.0.1:8000';
+const project_url = 'https://pyginweb.herokuapp.com';
 
 //Project item
 function Project(props) {

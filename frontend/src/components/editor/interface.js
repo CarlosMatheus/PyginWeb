@@ -11,7 +11,7 @@ import SceneGame from './engine_classes/scene'
 import axios from 'axios'
 import File from './engine_classes/file'
 import Component from './engine_classes/component'
-const project_url = 'http://127.0.0.1:8000';
+const project_url = 'https://pyginweb.herokuapp.com';
 
 class Editor extends React.Component {
     constructor(props) {
