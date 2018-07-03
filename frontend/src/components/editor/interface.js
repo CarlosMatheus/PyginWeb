@@ -11,6 +11,7 @@ import SceneGame from './engine_classes/scene'
 import axios from 'axios'
 import File from './engine_classes/file'
 import Component from './engine_classes/component'
+const project_url = 'http://127.0.0.1:8000';
 
 class Editor extends React.Component {
     constructor(props) {
@@ -104,7 +105,7 @@ class Editor extends React.Component {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         axios.post(
-            "http://127.0.0.1:8000/api/gameobjects/",
+            project_url+"/api/gameobjects/",
             {
                 "name": object_name,
                 "type" : object_name,
@@ -135,7 +136,7 @@ class Editor extends React.Component {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         axios.post(
-            "http://127.0.0.1:8000/api/scenes/",
+            project_url+"/api/scenes/",
             {
                 "name": scene_name,
                 "project": this.state.project_id,
@@ -149,7 +150,7 @@ class Editor extends React.Component {
             if (files[i].type == 'Scene')
                 files.splice(i, 1);
 
-        axios.get('http://127.0.0.1:8000/api/scenes/' + this.state.project_id + '/')
+        axios.get(project_url+'/api/scenes/' + this.state.project_id + '/')
             .then(response => {
                     files.push(response.data.map((scene) => new File(scene.name, 'Scene')));
                     this.setState({
@@ -171,7 +172,7 @@ class Editor extends React.Component {
     }
 
     updateGameObjects(scene) {
-        axios.get('http://127.0.0.1:8000/api/gameobjects/' + scene.id + '/')
+        axios.get(project_url+'/api/gameobjects/' + scene.id + '/')
             .then(response => {
                     scene.game_objects = response.data.map((gameobject) => new GameObject(gameobject.name));
                 }

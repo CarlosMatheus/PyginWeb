@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup'
 import axios from 'axios'
 import './popup.css'
 import './project_selector.css';
+const project_url = 'http://127.0.0.1:8000';
 
 //Project item
 function Project(props) {
@@ -48,9 +49,8 @@ class CreateProject extends React.Component {
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         this.state.projectId = this.props.getIndex()
         axios.post(
-            "http://127.0.0.1:8000/api/",
+            project_url + "/api/",
             {
-                "id": this.state.projectId,
                 "name": name,
                 "creation_date": "2018-06-15T01:01:00Z",
                 "user": 1,
@@ -113,7 +113,7 @@ class ProjectSelector extends React.Component {
 
     getList() {
         for (var i = 0; i < 2; i++)
-            axios.get('http://127.0.0.1:8000/api/projects/')
+            axios.get(project_url + '/api/projects/')
                 .then(response => this.setState({
                         indexes: response.data.map((proj) => proj.id),
                         items: response.data.map((proj) => proj.name)
@@ -128,7 +128,7 @@ class ProjectSelector extends React.Component {
     deleteProject(id) {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-        axios.delete('http://127.0.0.1:8000/api/projects/destroy/' + id + '/');
+        axios.delete(project_url+'/api/projects/destroy/' + id + '/');
         this.getList();
         this.props.changeCurrentProject('New Project', 0);
     }
