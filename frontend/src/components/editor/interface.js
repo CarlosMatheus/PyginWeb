@@ -31,7 +31,7 @@ class Editor extends React.Component {
             selected_file: 0,
             file_count: {
                 'Controller': 0, 'Animation': 0
-            }
+            },
         }
     }
 
@@ -71,7 +71,7 @@ class Editor extends React.Component {
                 selected_file: -1,
                 file_count: {
                     'Controller': 0, 'Animation': 0
-                }
+                },
             })
         } else {
             this.updateScenes();
@@ -177,6 +177,9 @@ class Editor extends React.Component {
                 }
             ).then(()=>this.setState(this.state));
         this.updateGameObjectSelection(0);
+        if (this.state.scenes[this.state.selected_scene].game_objects.length > 0)
+            this.state.scenes[this.state.selected_scene].rectangle_pos = [1, 1];
+        else this.state.scenes[this.state.selected_scene].rectangle_pos = [0, 0];
     }
 
     createComponent(name) {
@@ -222,7 +225,9 @@ class Editor extends React.Component {
                                 <div className="col-6">
                                     <div className="main-component">
                                         <Scene
-                                            current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}/>
+                                            current_scene={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene] : null}
+                                            rectangle_pos={this.state.scenes.length > 0 ? this.state.scenes[this.state.selected_scene].rectangle_pos : [0, 0]}
+                                        />
                                     </div>
                                 </div>
 

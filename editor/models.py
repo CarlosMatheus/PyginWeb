@@ -32,5 +32,3 @@ class Transform(models.Model):
     scaley = models.DecimalField(decimal_places=2, max_digits=20)
     gameobject = models.ForeignKey(GameObject, on_delete=models.CASCADE)
 
-
-

@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PyginWeb</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="{% static "vendor/simple-line-icons/css/simple-line-icons.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/stylish-portfolio.css" %}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="/login/">Login</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#services">Why Pygin?</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#portfolio">Game Examples</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#contact">Start now!</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <h1 class="mb-1">PyginWeb</h1>
+        <h3 class="mb-5">
+          <em>A solution for acessible game development</em>
+        </h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Learn More</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+      <div class="container">
+        <div class="content-section-heading">
+          <!-- <h3 class="text-secondary mb-0">Services</h3> -->
+          <h2 class="mb-5">Why Pygin?</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-hourglass"></i>
+            </span>
+            <h4>
+              <strong>Time is Valuable</strong>
+            </h4>
+            <p class="text-faded mb-0">Start the development of your game right now.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-game-controller"></i>
+            </span>
+            <h4>
+              <strong>Games are Fun</strong>
+            </h4>
+            <p class="text-faded mb-0">And we make sure you have the best experience making them.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-screen-smartphone"></i>
+            </span>
+            <h4>
+              <strong>Power of Choice</strong>
+            </h4>
+            <p class="text-faded mb-0">We value accessability, so you can check your project from any device.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-graduation"></i>
+            </span>
+            <h4>
+              <strong>Creativity</strong>
+            </h4>
+            <p class="text-faded mb-0">Because we are always thinking outside and about the box.</p>
+          </div>
+        </div>
+        <h2 class="mb-5"> </h2>
+      </div>
+      <div class="plc-hldr"></div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="content-section bg-primary text-white" id="portfolio">
+      <div class="container text-center">
+        <div class="content-section-heading">
+          <h2 class="mb-4">Our Game Examples</h2>
+          <p class="lead mb-5">Because showing is the best way of proving something.</p>
+        </div>
+        <div class="container">
+            <div class="plc-hldr"></div>
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <a class="portfolio-item" href="https://github.com/CarlosMatheus/Balance">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Balance</h2>
+                  <p class="mb-0">An arcade game inspired by Duet.</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="https://raw.githubusercontent.com/CarlosMatheus/Balance/master/game/assets/img/image_for_read_me.png" alt="">
+            </a>
+          </div>
+          <div class="col-lg-7">
+            <div class="plc-hldr"></div>
+            <div class="plc-hldr"></div>
+            <div class="plc-hldr"></div>
+            <div class="plc-hldr"></div>
+            <h2 class="mb-4"> Balance</h2>
+            <div class="container text-center">
+                <p class="lead mb-5">A simple and challenging arcade game made as a college project.</p>
+                <p class="lead mb-5">The development of Pygin started with Balance. Built on top of the Pygame framework, the Pygin engine was created as a way
+                                     of making it easier to create more complex games using python.
+                                    </p>
+                <p class="lead mb-5">The Pygin engine was highly inspired by the Unity engine architecture and the PyginWeb project was created as a way to spread
+                                     this technology and save people time.
+                                     </p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="callout" id="contact">
+      <div class="container text-center">
+        <h2 class="mx-auto mb-5">Make your next game
+          <em>right now</em>
+          !</h2>
+        <a class="btn btn-primary btn-xl" href="/login/">Go to editor!</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="https://github.com/CarlosMatheus/PyginWeb">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; PyginWeb 2018</p>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static "vendor/jquery-easing/jquery.easing.min.js" %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static "js/stylish-portfolio.min.js" %}"></script>
+
+  </body>
+
+</html>
