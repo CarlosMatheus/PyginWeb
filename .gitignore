@@ -13,7 +13,6 @@ pygame_engine\.egg-info/
 dist/
 
 # WEBAPP
-db.sqlite3
 static/
 node_modules/
 
