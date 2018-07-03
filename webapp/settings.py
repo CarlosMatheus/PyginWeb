@@ -27,7 +27,7 @@ SECRET_KEY = 'qtkgidfxb!frm2%h%s&(o@pam*$ovzwtb(&#3gp!695j1=%0p7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pyginweb.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
