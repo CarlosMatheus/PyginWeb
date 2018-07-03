@@ -146,3 +146,4 @@ WEBPACK_LOADER = {
 
 LOGIN_REDIRECT_URL = '/editor/'
 LOGIN_URL = '/login/'
+
