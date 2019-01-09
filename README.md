@@ -1,6 +1,6 @@
 # PyginWeb
 
-PyginWeb is an online web game editor powered by Pygin. Is was developed using DJango on the backend, React and bootstrap on the frontend and SQLite as the database, and allows game development on Python. The latest version is running [here.](https://pyginweb.herokuapp.com/)
+PyginWeb is an online scenario editor for Pygin to facilitate the development of games in Python. It was developed using React, DJango and SQLite. The latest version is running [here.](https://pyginweb.herokuapp.com/)
 
 One of the purposes of this game editor is to make python game development easier.
 This engine includes support for collisions, meshes, materials, game objects and scenes.
