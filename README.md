@@ -51,15 +51,6 @@ If any substantial change is made, please, help out with the documentation using
 
 This project aims to make the process of game development using python easier. To understand a little bit more about how the code is structured visit the [wiki](https://github.com/CarlosMatheus/Engine/wiki).
 
-## Authors
-
-* **Carlos Matheus Barros da Silva** - [CarlosMatheus](https://github.com/CarlosMatheus)
-* **Aloysio Galvão Lopes** - [aloysiogl](https://github.com/aloysiogl)
-* **Igor Albuquerque Silva** - [igoralbuq](https://github.com/igoralbuq)
-* **Eric Pereira Queiroz Moreira** - [ericpqmor](https://github.com/ericpqmor)
-* **Igor Mourão Ribeiro** - [igor-ribeiiro](https://github.com/igor-ribeiiro)
-* **Luiz Henrique Aguiar** -[HikkusT](https://github.com/HikkusT)
-
 ## License
 
 This project is licensed under the MIT License - see the [licence](LICENCE.md) file for details.
